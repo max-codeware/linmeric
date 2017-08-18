@@ -1,5 +1,5 @@
 # Welcome to linmeric page
-## This page will provide a simple guide to learn how to use this simple command line calculator
+### This page will provide a simple guide to learn how to use this simple command line calculator
 
 ## Installing linmeric:
 
