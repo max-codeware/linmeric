@@ -16,6 +16,7 @@ or click [here](https://rubygems.org/gems/linmeric) to go to the linmeric rubyge
 ## Version changes:
 ### 0.1.0
 - first release
+
 ### 0.2.0
 - A better documentation has been provided
 - Matrix expression converter has been rewritten to get better performances
@@ -52,7 +53,6 @@ The supported languages are:
 
 Linguide is also provided by a `-h` command to view its help guide
 
-## Bug and mistake reports:
-Bug and mistake reports are absolutely welcomed!
-To report any bug in the code or a mistake in the provided guides or in this websites, please email me at max.codeware@gmail.com
-
+## Contributing:
+Bug and mistake reports and pull requests are absolutely welcomed!
+To report any bug in the code or a mistake in the provided guides or in this website, please email me at max.codeware@gmail.com or on [GitHub](https://github.com/max-codeware/linmeric) to pull requests too.
