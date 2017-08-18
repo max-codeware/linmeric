@@ -1,2 +1,0 @@
-# linmeric
-simple numeric calculator
