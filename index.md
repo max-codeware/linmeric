@@ -42,7 +42,7 @@ From the command line type:
 ```sh
   $ linguide <lang>
 ```
-to open the user guide on gedit. <lang> Must be replaced by the language you want.
+to open the user guide on gedit. `<lang>` Must be replaced by the language you want.
 The supported languages are:
 - en    (English)
 - it    (Italian)
