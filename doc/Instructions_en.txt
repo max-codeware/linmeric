@@ -1,0 +1,207 @@
+
+  LINMERIC: designed and developed by Massimiliano Dal Mas
+  
+  Email: max.codeware@gmail.com
+  
+  Requires 'io/console'
+  
+  ## symbols used in this documentations: ##
+  
+    <text> : kind of argument to be replaced
+    #=>    : output of the program
+    //     : specifications or comments
+    =>     : from..to
+    <>     : different
+  
+####################################
+#           INSTRUCTIONS           #
+####################################
+   ________________________
+   #_VARIABLE ASSIGNMENT:_#
+   ************************
+   
+ <variable_name> = <value>
+              or
+ <variable_name> = <expression>
+
+ Examples: v1 = 13
+           e1 = 3*4^2 #=> 48
+           e2 = a*b+c  // a,b,c already defined
+           
+ (allowed operations: +,-,*,/,^)
+ 
+ This interpreter sees as different uppercase and lowercase letters in variable definitions. (A1 <> a1)
+ 
+   ________________________
+   #_VARIABLE DISPLAYING:_#
+   ************************
+   
+ shw: <variable_name> or simply typing <variable_name>
+ 
+ Examples: // v1 = 13
+           shw: v1 #=> 13
+           v1      #=> 13
+           
+ Displaying all the inserted variables through the keyword 'shwvar:' (no argument required).
+  
+ Example: // v1 = 13, v2 = 22
+          shwvar: #=> v1 = 13, #=> v2 = 22
+           
+   ________________
+   #_COMPARISONS:_#
+   ****************
+   
+ <expression> = <expression>
+
+ Examples: 12+7 = 10+9   #=> true
+           12*8 = 20^123 #=> false
+        
+           a/b = c*f     #=> true/false
+
+   ________________________        
+   #_CREATING A FUNCTION:_#
+   ************************
+
+ <function_name> = f: "<function_definition>"
+ 
+ Examples: fx = f: "x*log(x)"
+           gx = f: "y^z"
+
+ At the moment, the following algebric functions are supported: log, sin, cos, exp, tan
+ Constants: PI (PI = 3,14...)
+ 
+ Restriction: parameters must be composed by only one letter (x,y,k,a...)
+ 
+ Warning: this interpreter uses ruby methods to solve functions.
+ Therefore, divisions with numbers return a number in the format corresponding to the one of the denominator. 
+ Example: 1/2 #=> 0 (integer => integer); 1/2.0 #=> 0.5 (float => float) 
+ 
+   ______________________
+   #_CREATING A MATRIX:_#
+   **********************
+   
+ Matrix inserted by hand:
+   
+  <matrix_name> = mx: "<rows>,<columns>"
+   
+ Matrix according to a certain function rows-columns (or number)
+ 
+  <matrix_name> = mx: "<rows>,<columns>" as: "<function_definition>"
+
+  or
+  
+  <matrix_name> = mx: "<rows>,<columns>" as: <function_name>
+  
+ Matrix loaded from a file:
+ 
+  <matrix_name> = mx: from: "<file_path>"
+  
+ Identity matrix:
+   
+  <matrix_name> = id_mx: <size>
+  
+ Examples: m1 = mx: "4,4"            // it creates a 4x4 matrix with values inserted by the user
+           m2 = mx: "4,4" as: "r*c"  // it creates a 4x4 matrix in which each element is given by the product row_number*column_number 
+        
+           // kx = f: "r*c" 
+           
+           m4 = mx: "4,4" as: kx                          // equals to the previous example 
+           m5 = mx: from: "/home/usr/Desktop/matrice.csv" // it loads the matrix written in the .csv file 
+                                                          // the interpreter reads only .csv files
+           id = id_mx: 5                                  // it creates an identity 5x5 matrix
+           
+ Allowed operations: +, -, *
+                     / (Matrix-number) It divides each element of the specified matrix for the given number
+                     ^ (Matrix-number) It elevates each element at the given exponent
+                     
+ It is possible to insert as value simple operations as 3/4, 10^5...
+                     
+   __________________________
+   #_OPERATIONS ON MATRICES_#
+   **************************
+   
+ Transposition: t: <matrix_name>
+   Example:
+     // m1: 4x7 matrix
+     t: m1 #=> 7x4 matrix
+     
+ Norm: norm: <matrix_name>
+   Example:
+     norm: m1 // sqrt (sum (m1[r,c]^2))
+     
+ Determinant: det: <matrix_name>
+   Example:
+     // m0: 6,6 matrix
+     det: m0
+     
+ Results can be stored in a variable
+ 
+   ________________________
+   #_FUNCTION INTEGRATION_#
+   ************************
+   
+   
+ integ: "<function_definitio>" "<range>" <number_of_integration_points> ("<integration_method>")
+ 
+ It is possible to replace the function definition with a variable containing the function itself.
+ Results can be stored in a variable.
+ 
+ Examples: integ: "x*log(x^2)" "3,10" 50             // integration of 'x*log(x^2)' from 3 to 10 on 50 points
+           integ: "x*log(x^2)" "3,10" 50 "midpoint"  // integration method specifyed
+           // sx = f: "x*log(x^2)"
+           integ: sx "3,10" 50
+           
+ Available integration methods: trapezes  // trapezes method
+                                rectl     // left-rectangles method
+                                rectr     // right-rectangles method
+                                midpoint  // middle-rectangles method
+                                simpson   // simpson method (default)
+                                boole     // boole method
+                                
+   ____________________
+   #_LU FACTORIZATION_#
+   ********************
+   
+ solve: <matrix_name> ~ <solution_matrix_name>
+  or
+ solve: <expression_with_matrices> ~ <expression_with_matrices>
+
+ Examples: 
+   a,b,c: 3x3 matrices
+   d    : 3x1 matrix
+   
+   solve: a ~ d     // returns the x-matrix containing the solutions of the system (d: known system values matrix)
+   solve: a*b ~ c*d // returns the x-matrix solution of the matrix returned by a*b
+   
+ LU factorization with direct matrix creation:
+    
+    solve: (mx: "4,4") ~ (mx: "4,1")
+    
+ L and U matrices are saved as variables with their default names (L,U) 
+  
+  
+   _____________________________________
+   #_WRITING VALUES AND DATAS ON FILES_#
+   *************************************
+   
+ <value> > "<file_path>"
+  or
+ <expression> > "<file_path>"
+  or
+ <variable_name> > "<file_path>"
+ 
+ Examples: 23     > "/home/usr/Desktop/val.txt"     // the number 23 will be written in val.txt. If the file does not exist, 
+                                                       it will be created
+           s*q0+1 > "/home/usr/Desktop/val.txt"     // the result of 's*q0+1' will be written in val.txt (s,q0 are variables)
+           // mk: 8x8 matrix
+           mk     > "/home/usr/Desktop/matrx.csv"  // Matrix 'mk' will be written in matrix.csv
+
+
+
+
+
+
+
+
+
+

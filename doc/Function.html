@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Function - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-balanced_brackets-3F">#balanced_brackets?</a>
+    
+    <li ><a href="#method-i-convert">#convert</a>
+    
+    <li ><a href="#method-i-integrate">#integrate</a>
+    
+    <li ><a href="#method-i-ok-3F">#ok?</a>
+    
+    <li ><a href="#method-i-to_block">#to_block</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+    <li ><a href="#method-i-tokenize">#tokenize</a>
+    
+    <li ><a href="#method-i-translate">#translate</a>
+    
+    <li ><a href="#method-i-vars">#vars</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Function">
+  <h1 id="class-Function" class="class">
+    class Function
+  </h1>
+
+  <section class="description">
+    
+<p>This class provides a simple representation of a function and some method
+to manipulate it</p>
+<dl class="rdoc-list note-list"><dt>Author
+<dd>
+<p>Massimiliano Dal Mas (<a
+href="mailto:max.codeware@gmail.com">max.codeware@gmail.com</a>)</p>
+</dd><dt>License
+<dd>
+<p>Distributed under MIT license</p>
+</dd></dl>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new `Function` object</p>
+<ul><li>
+<p>*<strong>argument</strong>*: string to be converted (and representing a
+function)</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Function_class.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-ivar">@inp</span> = <span class="ruby-identifier">str</span>
+  <span class="ruby-ivar">@vars</span> = []
+  <span class="ruby-ivar">@i</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@funct</span> = <span class="ruby-identifier">convert</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-integrate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">integrate</span><span
+            class="method-args">(r,n,m = 'simpson')</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Integrates the function according to the specified method (see: <a
+href="Integrators.html">Integrators</a>)</p>
+<ul><li>
+<p>*<strong>argument</strong>*: dimension of the range; see: <a
+href="Dim.html">Dim</a></p>
+</li><li>
+<p>*<strong>argument</strong>*: number of points for integration</p>
+</li><li>
+<p>*<strong>argument</strong>*: method to integrate the function (optional).
+&#39;simpson&#39; is default</p>
+</li><li>
+<p>*<strong>returns</strong>*:</p>
+<ul><li>
+<p><a href="Numeric.html">Numeric</a> value as result</p>
+</li><li>
+<p><code>nil</code> if an error occourred</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="integrate-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Function_class.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">integrate</span>(<span class="ruby-identifier">r</span>,<span class="ruby-identifier">n</span>,<span class="ruby-identifier">m</span> = <span class="ruby-string">&#39;simpson&#39;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ok?</span>
+  <span class="ruby-identifier">block</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_block</span>(<span class="ruby-value">1</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">m</span> = (<span class="ruby-identifier">m</span> <span class="ruby-operator">-</span> <span class="ruby-string">&#39;&quot;&#39;</span>).<span class="ruby-identifier">downcase</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">m</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;trapezes&quot;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;Integrators.trapezi(r.sx,r.dx,n)#{block}&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;midpoint&quot;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;Integrators.simpson(r.sx,r.dx,n)#{block}&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;simpson&quot;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;Integrators.simpson(r.sx,r.dx,n)#{block}&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;rectl&quot;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;Integrators.rettsx(r.sx,r.dx,n)#{block}&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;rectr&quot;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;Integrators.rettdx(r.sx,r.dx,n)#{block}&quot;</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;boole&quot;</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">eval</span>(<span class="ruby-node">&quot;Integrators.boole(r.sx,r.dx,n)#{block}&quot;</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Argument Error: Invalid integration method&quot;</span>;
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Argument Error: bad function for integration&quot;</span>;
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-ok-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ok?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tells whether the function has been correctly converted from the string
+format</p>
+<ul><li>
+<p>*<strong>returns</strong>*: <code>true</code> if the function has been
+successfully converted; <code>false</code> else</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="ok-3F-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Function_class.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ok?</span> 
+  <span class="ruby-ivar">@funct</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">?</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>) <span class="ruby-operator">:</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_block" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_block</span><span
+            class="method-args">(n = 0)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the function as a ruby block ({ |…| … })</p>
+<ul><li>
+<p>*<strong>argument</strong>*: number of variables needed for the block;
+default value is set if n == 0</p>
+</li><li>
+<p>*<strong>returns</strong>*: string that represents the block;
+<code>nil</code> if an error is found</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="to_block-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Function_class.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_block</span>(<span class="ruby-identifier">n</span> = <span class="ruby-value">0</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ok?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@vars</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">n</span> = <span class="ruby-ivar">@vars</span>.<span class="ruby-identifier">size</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">b_v</span> = <span class="ruby-node">&quot;|#{vars(n)}|&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;{ #{b_v} #{@funct} }&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>returns</strong>*: string representation of the function</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Function_class.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@inp</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-vars" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">vars</span><span
+            class="method-args">(n = 0)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Builds the list of the variables needed for the block</p>
+<ul><li>
+<p>*<strong>argument</strong>*: number of variables needed for the block</p>
+</li><li><dl class="rdoc-list note-list"><dt>*<strong>returns</strong>*
+<dd></dd></dl>
+<ul><li>
+<p><code>nil</code> if an error occourred while converting the function</p>
+</li><li>
+<p><code>nil</code> if `n` is less than the number of variables of the
+function</p>
+</li><li>
+<p>string representation of the list</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="vars-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Function_class.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">vars</span>(<span class="ruby-identifier">n</span> = <span class="ruby-value">0</span>)
+  <span class="ruby-identifier">n</span> = <span class="ruby-ivar">@vars</span>.<span class="ruby-identifier">size</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ok?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@vars</span>.<span class="ruby-identifier">size</span> 
+  <span class="ruby-identifier">var</span> = (<span class="ruby-ivar">@vars</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>) <span class="ruby-operator">?</span> <span class="ruby-ivar">@vars</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">1</span><span class="ruby-operator">...</span><span class="ruby-ivar">@vars</span>.<span class="ruby-identifier">length</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">var</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39;,&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@vars</span>[<span class="ruby-identifier">i</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">!=</span> <span class="ruby-ivar">@vars</span>.<span class="ruby-identifier">size</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">i</span> = <span class="ruby-value">0</span>
+    (<span class="ruby-string">&#39;a&#39;</span><span class="ruby-operator">..</span><span class="ruby-string">&#39;z&#39;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ch</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@vars</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">ch</span>
+        <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span><span class="ruby-value">1</span>
+        <span class="ruby-identifier">var</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39;,&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">var</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-identifier">var</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">ch</span>
+        <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> (<span class="ruby-identifier">n</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@vars</span>.<span class="ruby-identifier">size</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">var</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-balanced_brackets-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">balanced_brackets?</span><span
+            class="method-args">(expr)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if the brackets are balanced in the input function</p>
+<ul><li>
+<p>*<strong>argument</strong>*: array of the function components</p>
+</li><li>
+<p>*<strong>returns</strong>*:</p>
+<ul><li>
+<p><code>nil</code> if `expr` is not an array</p>
+</li><li>
+<p><code>true</code> if the brackets are balanced; <code>false</code> else</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="balanced_brackets-3F-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Function_class.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">balanced_brackets?</span>(<span class="ruby-identifier">expr</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">expr</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>
+  <span class="ruby-identifier">brakets</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">expr</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">el</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;(&#39;</span>
+        <span class="ruby-identifier">brakets</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;)&#39;</span>
+        <span class="ruby-identifier">brakets</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">brakets</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">:</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-convert" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">convert</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Converts the function inerted by the user in a function written in Ruby
+language</p>
+<ul><li>
+<p>*<strong>argument</strong>*: input function in string format (inserted by
+the user)</p>
+</li><li>
+<p>*<strong>returns</strong>*: function understandable by Ruby in string
+format</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="convert-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Function_class.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-identifier">tokenize</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">balanced_brackets?</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">translate</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-tokenize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tokenize</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Splits the input string into its components (variables,operators…)</p>
+<ul><li>
+<p>*<strong>argument</strong>*: input function in string format (inserted by
+the user)</p>
+</li><li>
+<p>*<strong>returns</strong>*: array containing the components of the function</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="tokenize-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Function_class.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tokenize</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">tokens</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">each_char</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ch</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">ch</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[\+\-\*\/\^\(\)]/</span>
+        <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">ch</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[a-zA-Z\0-9\.]/</span>
+        <span class="ruby-identifier">x</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">pop</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-string">&#39;+-*/^()&#39;</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">tokens</span>[<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">push</span> (<span class="ruby-identifier">x</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ch</span>)
+        <span class="ruby-identifier">x</span> = <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">tokens</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-translate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">translate</span><span
+            class="method-args">(str,open_b = false)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Translates the function from linmeric language to Ruby language using a
+turing machine to detect possible errors</p>
+<ul><li>
+<p>*<strong>argument</strong>*: array of the function components</p>
+</li><li>
+<p>*<strong>argument</strong>*: boolean to identify whether we are inside
+brackets or not. <code>false</code> default</p>
+</li></ul>
+
+<p>(out brackets)</p>
+<ul><li>
+<p>*<strong>returns</strong>*:</p>
+<ul><li>
+<p><code>nil</code> if `str` is not an array</p>
+</li><li>
+<p>function in Ruby language in string format</p>
+</li></ul>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="translate-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Function_class.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">translate</span>(<span class="ruby-identifier">str</span>,<span class="ruby-identifier">open_b</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>
+  <span class="ruby-identifier">funct</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">state</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-ivar">@i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">state</span>
+    
+      <span class="ruby-comment"># beginning state</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">0</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>]
+          <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[\+\-]/</span>
+            <span class="ruby-identifier">funct</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>]
+            <span class="ruby-identifier">state</span> = <span class="ruby-value">1</span>
+          <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\p{Alpha}/</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-constant">Tool</span>.<span class="ruby-identifier">f</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>] <span class="ruby-keyword">then</span>
+              <span class="ruby-identifier">funct</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;Math::#{str[@i]}&quot;</span>
+              <span class="ruby-identifier">state</span> = <span class="ruby-value">4</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;PI&quot;</span>
+              <span class="ruby-identifier">state</span> = <span class="ruby-value">2</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;PI&quot;</span>
+            <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>].<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+              <span class="ruby-identifier">ch</span> = <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>].<span class="ruby-identifier">downcase</span>
+              <span class="ruby-identifier">funct</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">ch</span>
+              <span class="ruby-ivar">@vars</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">ch</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@vars</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">ch</span>
+              <span class="ruby-identifier">state</span> = <span class="ruby-value">2</span>
+            <span class="ruby-keyword">else</span>
+              <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[0-9]+/</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>].<span class="ruby-identifier">integer?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>].<span class="ruby-identifier">float?</span> <span class="ruby-keyword">then</span>
+              <span class="ruby-identifier">funct</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>]
+              <span class="ruby-identifier">state</span> = <span class="ruby-value">2</span>
+            <span class="ruby-keyword">else</span>
+              <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;(&quot;</span>
+            <span class="ruby-identifier">funct</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;(&quot;</span>
+            <span class="ruby-ivar">@i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+            <span class="ruby-identifier">part</span> = <span class="ruby-identifier">translate</span>(<span class="ruby-identifier">str</span>,<span class="ruby-keyword">true</span>)
+            <span class="ruby-identifier">state</span> = <span class="ruby-value">2</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">part</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">then</span>
+              <span class="ruby-identifier">funct</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">part</span>
+            <span class="ruby-keyword">else</span>
+              <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+        
+      <span class="ruby-comment"># state 1 expects or a variable (single char) or a number or a function or (</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>]
+          <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\p{Alpha}/</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-constant">Tool</span>.<span class="ruby-identifier">f</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>] <span class="ruby-keyword">then</span>
+              <span class="ruby-identifier">funct</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;Math::#{str[@i]}&quot;</span>
+              <span class="ruby-identifier">state</span> = <span class="ruby-value">4</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;PI&quot;</span>
+              <span class="ruby-identifier">state</span> = <span class="ruby-value">2</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;PI&quot;</span>
+            <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>].<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+              <span class="ruby-identifier">ch</span> = <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>].<span class="ruby-identifier">downcase</span>
+              <span class="ruby-identifier">funct</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">ch</span>
+              <span class="ruby-ivar">@vars</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">ch</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@vars</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">ch</span>
+              <span class="ruby-identifier">state</span> = <span class="ruby-value">2</span>
+            <span class="ruby-keyword">else</span>
+              <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">when</span> <span class="ruby-regexp">/[0-9]+/</span> 
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>].<span class="ruby-identifier">integer?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>].<span class="ruby-identifier">float?</span> <span class="ruby-keyword">then</span>
+              <span class="ruby-identifier">funct</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>]
+              <span class="ruby-identifier">state</span> = <span class="ruby-value">2</span>
+            <span class="ruby-keyword">else</span>
+              <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;(&quot;</span>
+            <span class="ruby-identifier">funct</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;(&quot;</span>
+            <span class="ruby-identifier">state</span> = <span class="ruby-value">3</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+            
+        <span class="ruby-keyword">end</span>
+      
+      <span class="ruby-comment"># state 2 expects an operator or )</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">2</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-regexp">/[\+\-\*\/\^]{1}/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>] <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">funct</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>] <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;^&quot;</span>
+          <span class="ruby-identifier">funct</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;**&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;^&quot;</span>
+          <span class="ruby-identifier">state</span> = <span class="ruby-value">1</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;)&quot;</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">open_b</span> <span class="ruby-keyword">then</span>
+            <span class="ruby-keyword">return</span> <span class="ruby-identifier">funct</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;)&quot;</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+     
+      <span class="ruby-comment"># state 3 expects a sub_expression not beginnin with (</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">3</span>
+        <span class="ruby-identifier">part</span> = <span class="ruby-identifier">translate</span>(<span class="ruby-identifier">str</span>,<span class="ruby-keyword">true</span>)
+        <span class="ruby-identifier">state</span> = <span class="ruby-value">2</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">part</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">funct</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">part</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+      
+      <span class="ruby-comment"># state 4 expects a sub_expression beginning with (</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">4</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>[<span class="ruby-ivar">@i</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&#39;(&#39;</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-ivar">@i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+          <span class="ruby-identifier">part</span> = <span class="ruby-identifier">translate</span>(<span class="ruby-identifier">str</span>,<span class="ruby-keyword">true</span>)
+          <span class="ruby-identifier">state</span> = <span class="ruby-value">2</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">part</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">then</span>
+            <span class="ruby-identifier">funct</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39;(&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">part</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+        
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">state</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">funct</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

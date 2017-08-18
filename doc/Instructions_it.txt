@@ -1,0 +1,211 @@
+
+ LINMERIC: progettato e sviluppato da Massimiliano Dal Mas
+ 
+ Email: max.codeware@gmail.com
+
+ Richiede la libreria 'io/console'
+ 
+ ## Simbologia usata in questa guida: ##
+   
+   <testo> : tipologia di elemento da sostituire
+   #=>     : output del programma
+   //      : commenti o specificazioni
+   =>      : da..a
+   <>      : diverso
+
+####################################
+#            ISTRUZIONI            #
+####################################
+   __________________________________
+   #_ASSEGNAZIONE AD UNA VARIABILE:_#
+   **********************************  
+
+ <nome_variabile> = <valore>
+            oppure
+ <nome_variabile> = <espressione>
+
+ Esempi: v1 = 13
+         e1 = 3*4^2 #=> 48
+         e2 = a*b+c  // a,b,c definite
+        
+ (operazioni consentite: +,-,*,/,^)
+
+ L'interprete fa differenza tra lettere minuscole e lettere maiuscole per le variabili.
+  
+   _____________________________________
+   #_VISUALIZZAZIONE DI UNA VARIABILE:_#
+   *************************************
+   
+ shw: <nome variabile> oppure <nome_variabile>
+ 
+ Esempi: // v1 = 13
+         shw: v1 #=> 13
+         v1      #=> 13
+ 
+ Visualizzazione di tutte le variabili inserite tramite parola chiave 'shwvar:' (argomento non richiesto).
+ 
+ Esempio: // v1 = 13, v2 = 22
+          shwvar: #=> v1 = 13, #=> v2 = 22
+ 
+   _________________
+   #_COMPARAZIONI:_#
+   *****************
+
+ <espressione> = <espressione>
+
+ Esempi: 12+7 = 10+9   #=> true
+         12*8 = 20^123 #=> false
+        
+         a/b = c*f     #=> true/false
+         
+   ______________________________        
+   #_CREAZIONE DI UNA FUNZIONE:_#
+   ******************************
+
+ <nome_funzione> = f: "<definizione_funzione>"
+ 
+ Esempi: fx = f: "x*log(x)"
+         gx = f: "y^z"
+        
+ Funzioni algebriche momentaneamente supportate: log, sin, cos, exp, tan;
+ Costanti: PI (pigreco)
+
+ Vincoli: i parametri devono essere composti da una sola lettera (x,y,k,a...).
+ 
+ Attenzione: l'interprete fa uso dei metodi risolutivi delle funzioni di ruby. 
+ Pertanto, le divisioni con numeri restituiscono un numero nel formato corrispondente al 
+ quello del denominatore. Esempio: 1/2 #=> 0 (integer => integer); 1/2.0 #=> 0.5 (float => float)
+
+   _____________________________
+   #_CREAZIONE DI UNA MATRICE:_#
+   *****************************
+
+ Matrice inserita da terminale:
+  
+  <nome_matrice> = mx: "<n_righe>,<n_colonne>"
+  
+ Martice secondo una certa funzione righe-colonne (o numero):
+
+  <nome_matrice> = mx: "<n_righe>,<n_colonne>" as: "<definizione_funzione>"
+  
+  oppure:
+  
+  <nome_matrice> = mx: "<n_righe>,<n_colonne>" as: <nome_funzione>
+  
+ Matrice caricata da file:
+        
+  <nome_matrice> = mx: from: "<percorso_file>"
+  
+ Metrice identità:
+ 
+  <nome_matrice> = id_mx: <grandezza>
+  
+ Esempi: m1 = mx: "4,4"            // creazione di una matrice 4x4 con valori inseriti dall'utente
+         m2 = mx: "4,4" as: "r*c"  // creazione matrice 4x4 dove ogni elemento è dato dal prodoto riga*colonna 
+        
+         // kx = f: "r*c" 
+           
+         m4 = mx: "4,4" as: kx                          // analogo all'esempio precedente 
+         m5 = mx: from: "/home/usr/Desktop/matrice.csv" // carica la matrice scritta nel file .csv
+         id = id_mx: 5                                  // Crea una matrice identità 5x5
+        
+ Operazioni consentite: +,-,*,/ (per uno scalare),^ (per uno scalare)
+ 
+ E' possibile inserire come valori in una matrice semplici operazioni come 3/4, 10^5;
+ 
+   _________________________
+   #_OPERAZIONI SU MATRICI_#
+   *************************
+   
+ Trasposizione: t: <nome_matrice>
+   Esempio:
+     // m1: matrice 4x7
+     t: m1 #=> matrice 7x4
+     
+ Norma: norm: <nome_matrice>
+   Esempio: 
+     norm: m1
+   
+ Determinante: det: <nome_matrice>
+   Esempio: 
+     // m0: matrice 6x6
+     det: m0 
+     
+ // Si possono assegnare i risultati ad una variabile
+  
+   ________________________________
+   #_INTEGRAZIONE DI UNA FUNZIONE_#
+   ********************************
+   
+ integ: "<definizione_funzione>" "<intervallo>" <numero_inervalli_quadratura> ("<metodo_integrazione>")
+ E' possibile sostituire la definizione della funzione con il nome di una variabile contenente una funzione.
+ Si può assegnare il risultato ad una variabile.
+ 
+ Esempi: integ: "x*log(x^2)" "3,10" 50            // integrazione della funzione 'x*log(x^2)' sull'intervallo 3-10 su 50 intervalli
+         integ: "x*log(x^2)" "3,10" 50 "midpoint"
+         // sx = f: "x*log(x^2)"
+         integ: sx "3,10" 50
+         
+ Metodi di integrazione: trapezes  // metodo dei trapezi
+                         rectl     // metodo dei rettangoli sinistri
+                         rectr     // metodo dei rettangoli destri
+                         midpoint  // metodo dei rettangoli medi
+                         simpson   // metodo di simpson (default)
+                         boole     // metodo di boole
+                         
+   ______________________
+   #_FATTORIZZAZIONE LU_#
+   **********************
+   
+ solve: <nome_matrice> ~ <nome_matrice_soluzione>
+  oppure
+ solve: <espressione_matrici> ~ <espressione_matrici> 
+ 
+ E' possibile assegnare il risultato ad una variabile
+ 
+ Esempi: 
+   a,b,c: matrici 3x3
+   d    : matrice 3x1
+   
+   solve: a ~ d     // restituisce il vettore soluzione x (d: vettore dei termini noti delle equazioni del sistema)
+   solve: a*b ~ c*d // restituisce il vettore soluzione della matrice risultante da a*b
+   
+ Fattorizzazione LU con inserimento diretto delle matrici:
+   
+   solve: (mx: "4,4") ~ (mx: "4,1") 
+   
+ Le matrici L e U vengono salvate come variabili con i rispettivi nomi (L,U)
+ 
+   _______________________________
+   #_SCRITTURA DI VALORI SU FILE_#
+   *******************************
+   
+ <valore> > "<percorso_file>"
+  oppure
+ <espressione> > "<percorso_file>"
+  oppure
+ <nome_variabile> > "<percorso_file>"
+ 
+ Esempi:  23     > "/home/usr/Desktop/val.txt"     // scrive il numero 23 sul file indicato. Se non esiste il file viene creato
+          s*q0+1 > "/home/usr/Desktop/val.txt"     // scrive il risultato dell'espressione sul file indicato
+           // mk: matrice 8x8
+          mk     > "/home/usr/Desktop/matrice.csv" // scrive la matrice 'mk' sul file csv indicato.
+
+
+        
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

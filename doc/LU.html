@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module LU - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-L">::L</a>
+    
+    <li ><a href="#method-c-U">::U</a>
+    
+    <li ><a href="#method-c-factorize">::factorize</a>
+    
+    <li ><a href="#method-c-reset">::reset</a>
+    
+    <li ><a href="#method-c-solve">::solve</a>
+    
+    <li ><a href="#method-c-swap">::swap</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-LU">
+  <h1 id="module-LU" class="module">
+    module LU
+  </h1>
+
+  <section class="description">
+    
+<p>This module provides some method to perform <a href="LU.html">LU</a>
+factorization on squared matrices.</p>
+<dl class="rdoc-list note-list"><dt>Author
+<dd>
+<p>Massimiliano Dal Mas (<a
+href="mailto:max.codeware@gmail.com">max.codeware@gmail.com</a>)</p>
+</dd><dt>License
+<dd>
+<p>Distributed under MIT license</p>
+</dd></dl>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-L" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">L</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the `L` matrix</p>
+          
+          
+
+          
+          <div class="method-source-code" id="L-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/LU.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-constant">L</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@L</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-U" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">U</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the `U` matrix</p>
+          
+          
+
+          
+          <div class="method-source-code" id="U-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/LU.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-constant">U</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@U</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-factorize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">factorize</span><span
+            class="method-args">(mx,sol)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Performs <a href="LU.html">LU</a> factorization calculating <a
+href="LU.html#method-c-L">::L</a> and <a href="LU.html#method-c-U">::U</a>
+matrices</p>
+<ul><li>
+<p>*<strong>argument</strong>*: squared matrix to factorize</p>
+</li><li>
+<p>*<strong>argument</strong>*: n x 1 matrix of known values of the linear
+system</p>
+</li><li>
+<p>*<strong>returns</strong>*: same as <a
+href="LU.html#method-c-solve">::solve</a></p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="factorize-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/LU.rb, line 47</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">factorize</span>(<span class="ruby-identifier">mx</span>,<span class="ruby-identifier">sol</span>)
+    [<span class="ruby-identifier">mx</span>,<span class="ruby-identifier">sol</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">vec</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">vec</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">sol</span> = <span class="ruby-identifier">sol</span>.<span class="ruby-identifier">tr</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">sol</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">sol</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">mx</span>.<span class="ruby-identifier">is_squared?</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sol</span>.<span class="ruby-identifier">getRws</span>
+    <span class="ruby-identifier">rows</span> = <span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getRws</span>
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">k</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">rows</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">column</span> = <span class="ruby-identifier">mx</span>[<span class="ruby-identifier">k</span><span class="ruby-operator">...</span><span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getRws</span>,<span class="ruby-identifier">k</span>].<span class="ruby-identifier">export</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">val</span><span class="ruby-operator">|</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">abs</span>}
+      <span class="ruby-identifier">max_index</span> = <span class="ruby-identifier">column</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">column</span>.<span class="ruby-identifier">max</span>)
+      <span class="ruby-identifier">mx</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">swap</span>(<span class="ruby-identifier">mx</span>,<span class="ruby-identifier">k</span>,<span class="ruby-identifier">k</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">max_index</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">max_index</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">k</span>
+      <span class="ruby-identifier">sol</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">swap</span>(<span class="ruby-identifier">sol</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">k</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">max_index</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">max_index</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">k</span>
+      <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> (<span class="ruby-identifier">k</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>)<span class="ruby-operator">...</span><span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">alpha</span> = (<span class="ruby-identifier">mx</span>[<span class="ruby-identifier">k</span>,<span class="ruby-identifier">k</span>] <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>) <span class="ruby-operator">?</span> (<span class="ruby-identifier">mx</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">k</span>] <span class="ruby-operator">/</span> <span class="ruby-identifier">mx</span>[<span class="ruby-identifier">k</span>,<span class="ruby-identifier">k</span>].<span class="ruby-identifier">to_f</span>) <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">mx</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">alpha</span>
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> (<span class="ruby-identifier">k</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>)<span class="ruby-operator">...</span><span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">mx</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">-=</span> <span class="ruby-identifier">alpha</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">mx</span>[<span class="ruby-identifier">k</span>,<span class="ruby-identifier">j</span>] 
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@L</span> = <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">identity</span>(<span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getRws</span>) <span class="ruby-operator">+</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getRws</span>,<span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getCls</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> (<span class="ruby-identifier">i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">j</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">mx</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">:</span> <span class="ruby-value">0</span>}
+    <span class="ruby-ivar">@U</span> = <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getRws</span>,<span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getCls</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> (<span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">j</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">mx</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">:</span> <span class="ruby-value">0</span>}
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">solve</span>(<span class="ruby-identifier">sol</span>)
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Finds the solutions of the linear system</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: n x 1 matrix of known values of the linear system</span>
+  <span class="ruby-comment"># * **returns**: n x 1 matrix with the solutions of the system</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">solve</span>(<span class="ruby-identifier">sol</span>)
+    <span class="ruby-identifier">z</span> = <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">sol</span>.<span class="ruby-identifier">getRws</span>,<span class="ruby-value">1</span>) {<span class="ruby-value">0</span>}
+    <span class="ruby-identifier">x</span> = <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">sol</span>.<span class="ruby-identifier">getRws</span>,<span class="ruby-value">1</span>) {<span class="ruby-value">0</span>}
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">sol</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">z</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] = <span class="ruby-identifier">sol</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>]
+      <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">i</span> <span class="ruby-keyword">do</span>       
+        <span class="ruby-identifier">z</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">-=</span> <span class="ruby-ivar">@L</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">*</span> (<span class="ruby-identifier">z</span>[<span class="ruby-identifier">j</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">||</span> <span class="ruby-value">1</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    (<span class="ruby-identifier">sol</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">downto</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">x</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] = <span class="ruby-identifier">z</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>]     
+      <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">i</span><span class="ruby-operator">...</span><span class="ruby-identifier">sol</span>.<span class="ruby-identifier">getRws</span>
+        <span class="ruby-identifier">x</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">-=</span> (<span class="ruby-ivar">@U</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>) <span class="ruby-operator">*</span> (<span class="ruby-identifier">x</span>[<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>)       
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">x</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] = <span class="ruby-identifier">x</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">/</span> <span class="ruby-ivar">@U</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">i</span>].<span class="ruby-identifier">to_f</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">x</span>
+  <span class="ruby-keyword">end</span>
+  
+  
+<span class="ruby-keyword">end</span>
+
+
+
+
+
+
+</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-reset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets to nil @L and @U variables</p>
+          
+          
+
+          
+          <div class="method-source-code" id="reset-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/LU.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">reset</span>
+  <span class="ruby-ivar">@L</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@U</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-solve" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">solve</span><span
+            class="method-args">(sol)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds the solutions of the linear system</p>
+<ul><li>
+<p>*<strong>argument</strong>*: n x 1 matrix of known values of the linear
+system</p>
+</li><li>
+<p>*<strong>returns</strong>*: n x 1 matrix with the solutions of the system</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="solve-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/LU.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">solve</span>(<span class="ruby-identifier">sol</span>)
+  <span class="ruby-identifier">z</span> = <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">sol</span>.<span class="ruby-identifier">getRws</span>,<span class="ruby-value">1</span>) {<span class="ruby-value">0</span>}
+  <span class="ruby-identifier">x</span> = <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">sol</span>.<span class="ruby-identifier">getRws</span>,<span class="ruby-value">1</span>) {<span class="ruby-value">0</span>}
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">sol</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">z</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] = <span class="ruby-identifier">sol</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>]
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">i</span> <span class="ruby-keyword">do</span>       
+      <span class="ruby-identifier">z</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">-=</span> <span class="ruby-ivar">@L</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">*</span> (<span class="ruby-identifier">z</span>[<span class="ruby-identifier">j</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">||</span> <span class="ruby-value">1</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  (<span class="ruby-identifier">sol</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">downto</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">x</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] = <span class="ruby-identifier">z</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>]     
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">i</span><span class="ruby-operator">...</span><span class="ruby-identifier">sol</span>.<span class="ruby-identifier">getRws</span>
+      <span class="ruby-identifier">x</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">-=</span> (<span class="ruby-ivar">@U</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>) <span class="ruby-operator">*</span> (<span class="ruby-identifier">x</span>[<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>)       
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">x</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] = <span class="ruby-identifier">x</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">/</span> <span class="ruby-ivar">@U</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">i</span>].<span class="ruby-identifier">to_f</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">x</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-swap" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">swap</span><span
+            class="method-args">(mx,r1,r2)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Swaps two rows of a matrix (pivoting)</p>
+<ul><li>
+<p>*<strong>argument</strong>*: matrix the rows must be swapped on</p>
+</li><li>
+<p>*<strong>argument</strong>*: first row</p>
+</li><li>
+<p>*<strong>argument</strong>*: second row</p>
+</li><li>
+<p>*<strong>returns</strong>*: new matrix with swapped rows</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="swap-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/LU.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">swap</span>(<span class="ruby-identifier">mx</span>,<span class="ruby-identifier">r1</span>,<span class="ruby-identifier">r2</span>)
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">mx</span>[<span class="ruby-identifier">r1</span>,<span class="ruby-identifier">i</span>],<span class="ruby-identifier">mx</span>[<span class="ruby-identifier">r2</span>,<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">mx</span>[<span class="ruby-identifier">r2</span>,<span class="ruby-identifier">i</span>],<span class="ruby-identifier">mx</span>[<span class="ruby-identifier">r1</span>,<span class="ruby-identifier">i</span>] 
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">mx</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

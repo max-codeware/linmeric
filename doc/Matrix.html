@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Matrix - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-from_file">::from_file</a>
+    
+    <li ><a href="#method-c-identity">::identity</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-21-3D">#!=</a>
+    
+    <li ><a href="#method-i-2A">#*</a>
+    
+    <li ><a href="#method-i-2A-2A">#**</a>
+    
+    <li ><a href="#method-i-2B">#+</a>
+    
+    <li ><a href="#method-i-2D">#-</a>
+    
+    <li ><a href="#method-i-2F">#/</a>
+    
+    <li ><a href="#method-i-3D-3D">#==</a>
+    
+    <li ><a href="#method-i-5B-5D">#[]</a>
+    
+    <li ><a href="#method-i-5B-5D-3D">#[]=</a>
+    
+    <li ><a href="#method-i-can_divide-3F">#can_divide?</a>
+    
+    <li ><a href="#method-i-can_multiply-3F">#can_multiply?</a>
+    
+    <li ><a href="#method-i-coerce">#coerce</a>
+    
+    <li ><a href="#method-i-del_rwcl">#del_rwcl</a>
+    
+    <li ><a href="#method-i-export">#export</a>
+    
+    <li ><a href="#method-i-getCls">#getCls</a>
+    
+    <li ><a href="#method-i-getRws">#getRws</a>
+    
+    <li ><a href="#method-i-is_squared-3F">#is_squared?</a>
+    
+    <li ><a href="#method-i-laplace">#laplace</a>
+    
+    <li ><a href="#method-i-norm">#norm</a>
+    
+    <li ><a href="#method-i-similar_to-3F">#similar_to?</a>
+    
+    <li ><a href="#method-i-to_file">#to_file</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+    <li ><a href="#method-i-tr">#tr</a>
+    
+    <li ><a href="#method-i-update">#update</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Matrix">
+  <h1 id="class-Matrix" class="class">
+    class Matrix
+  </h1>
+
+  <section class="description">
+    
+<p>This class provides a simple representation of a matrix with the main
+features, operations and some useful method to manipulate it or to make 
+its creation easier.</p>
+<dl class="rdoc-list note-list"><dt>Author
+<dd>
+<p>Massimiliano Dal Mas (<a
+href="mailto:max.codeware@gmail.com">max.codeware@gmail.com</a>)</p>
+</dd><dt>License
+<dd>
+<p>Distributed under MIT license</p>
+</dd></dl>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-from_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">from_file</span><span
+            class="method-args">(filename = "")</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new matrix loading it from a .csv file</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `String` of the file path</p>
+</li><li>
+<p>*<strong>returns</strong>*: new matrix object</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="from_file-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">from_file</span>(<span class="ruby-identifier">filename</span> = <span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-ivar">@mx</span> = []
+  <span class="ruby-ivar">@MyCls</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@MyRws</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-identifier">filename</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">filename</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-string">&quot;  Argument Error: Invalid directory or filename&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-string">&quot;r&quot;</span>).<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ln</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@MyRws</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">ln</span> = <span class="ruby-identifier">ln</span>.<span class="ruby-identifier">chomp</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;,&#39;</span>)
+      <span class="ruby-identifier">ln</span>.<span class="ruby-identifier">map!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span> 
+        <span class="ruby-identifier">cv</span> = <span class="ruby-constant">Calculator</span>.<span class="ruby-identifier">solve</span>(<span class="ruby-identifier">el</span>)
+        <span class="ruby-identifier">err</span> = <span class="ruby-identifier">el</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">cv</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">InputError</span>, <span class="ruby-node">&quot;  Argument Error: Invalid operation &#39;#{err}&#39; found in matrix rows&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cv</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">el</span> = <span class="ruby-identifier">cv</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-ivar">@mx</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">ln</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@mx</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">ln</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-string">&quot;  Argument Error: Irregular matrix rows&quot;</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-ivar">@MyCls</span> = <span class="ruby-identifier">ln</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">mat</span> = <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyRws</span>,<span class="ruby-ivar">@MyCls</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span><span class="ruby-operator">+</span><span class="ruby-identifier">j</span>]}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-identity" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">identity</span><span
+            class="method-args">(n)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Builds an identity matrix</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Fixnum` of the matrix dimension</p>
+</li><li>
+<p>*<strong>returns</strong>*: `Matrix` object</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="identity-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 398</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">identity</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;Argument Error: expecting Fixnum value, but #{n.class} found&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Fixnum</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">n</span>,<span class="ruby-identifier">n</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span>  (<span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">j</span>) <span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(rws = 0,cls = 0) { |i,j| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initialization of  new matrix in two different ways (chosen by the user):</p>
+<ul><li>
+<p>a block can be given to create a matrix according to a function</p>
+</li><li>
+<p>the user must insert each value by hand (if block is not given)</p>
+</li><li>
+<p>*<strong>requires</strong>*: `#solve` of <a
+href="Calculator.html">Calculator</a></p>
+</li><li>
+<p>*<strong>argument</strong>*: number of rows (Fixnum)</p>
+</li><li>
+<p>*<strong>argument</strong>*: number of columns (Fixnum)</p>
+</li><li>
+<p>*<strong>block</strong>*: yields a function with two arguments (optional)</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">rws</span> = <span class="ruby-value">0</span>,<span class="ruby-identifier">cls</span> = <span class="ruby-value">0</span>)
+  <span class="ruby-identifier">listener</span> = <span class="ruby-constant">Listener</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">rws</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">cls</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">rws</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Float</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">cls</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Float</span> <span class="ruby-keyword">then</span> 
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>,<span class="ruby-node">&quot;   Argument Error: invalid dimension #{rws}x#{cls} for Matrix object&quot;</span> 
+  <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">rws</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Fixnum</span>) <span class="ruby-keyword">or</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">cls</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Fixnum</span>) <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">e</span> = <span class="ruby-identifier">rws</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Fixnum</span>
+        <span class="ruby-identifier">e</span> = <span class="ruby-identifier">cls</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cls</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Fixnum</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>,<span class="ruby-node">&quot;  Argument Error: colums and rows in Integer format expected but #{e.class} found&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@MyRws</span> = <span class="ruby-identifier">rws</span>; <span class="ruby-ivar">@MyCls</span> = <span class="ruby-identifier">cls</span>
+    <span class="ruby-ivar">@mx</span>=[]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@MyRws</span>
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@MyCls</span>
+          <span class="ruby-identifier">value</span> = <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span> 
+          <span class="ruby-ivar">@mx</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">value</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>       
+    <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Insert the line values (separated by space) and press return to go on&quot;</span>
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">rws</span>
+          <span class="ruby-identifier">listener</span>.<span class="ruby-identifier">reset</span>
+          <span class="ruby-identifier">cl</span> = <span class="ruby-identifier">listener</span>.<span class="ruby-identifier">gets</span>.<span class="ruby-identifier">split</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;  #{cls} element(s) expected but #{cl.size} found. Retry&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cl</span>.<span class="ruby-identifier">size</span><span class="ruby-operator">==</span><span class="ruby-identifier">cls</span>
+          <span class="ruby-identifier">cl</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> 
+            <span class="ruby-identifier">cv</span> = <span class="ruby-constant">Calculator</span>.<span class="ruby-identifier">solve</span>(<span class="ruby-identifier">e</span>)
+            <span class="ruby-identifier">err</span> = <span class="ruby-identifier">e</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">cv</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: Invalid operation &#39;#{err}&#39; found in matrix rows&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cv</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+            <span class="ruby-identifier">e</span> = <span class="ruby-identifier">cv</span>
+          }
+          <span class="ruby-ivar">@mx</span> <span class="ruby-operator">+=</span><span class="ruby-identifier">cl</span> 
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+ 
+    
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">message</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">message</span>
+    <span class="ruby-ivar">@mx</span>=[]
+    <span class="ruby-keyword">retry</span>
+    
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-21-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">!=</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if this matrix is different from another object</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Object` to be compared with</p>
+</li><li>
+<p>*<strong>returns</strong>*: <code>true</code> if the matrix and the object
+are different; <code>false</code> else</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="21-3D-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">!=</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">self</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span> <span class="ruby-operator">?</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>) <span class="ruby-operator">:</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-2A" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">*</span><span
+            class="method-args">(ob)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Multiplies the current matrix to another</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Matrix` to be multiplied to</p>
+</li><li>
+<p>*<strong>returns</strong>*: `Matrix` object</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="2A-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 301</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">ob</span>)
+  <span class="ruby-keyword">case</span> 
+    <span class="ruby-keyword">when</span> (<span class="ruby-identifier">ob</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyRws</span>,<span class="ruby-ivar">@MyCls</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">ob</span>}
+    <span class="ruby-keyword">when</span> (<span class="ruby-identifier">ob</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">can_multiply?</span> <span class="ruby-identifier">ob</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">temp</span> = []
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@MyRws</span>
+          <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">ob</span>.<span class="ruby-identifier">getCls</span>()
+            <span class="ruby-identifier">temp</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>] = <span class="ruby-value">0</span>
+            <span class="ruby-keyword">for</span> <span class="ruby-identifier">k</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@MyCls</span>
+              <span class="ruby-identifier">temp</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>] <span class="ruby-operator">+=</span> <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">k</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">ob</span>[<span class="ruby-identifier">k</span>,<span class="ruby-identifier">j</span>]
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyRws</span>,<span class="ruby-identifier">ob</span>.<span class="ruby-identifier">getCls</span>()){ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">temp</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>]}
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: Cannot multiply #{@MyRws}x#{@MyCls} Matrix with #{ob.getRws}x#{ob.getCls}&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: Cannot multiply Matrix with #{ob.class}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-2A-2A" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">**</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Elevates each element of the current matrix to a `Numeric` exponent</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Numeric`</p>
+</li><li>
+<p>*<strong>returns</strong>*: `Matrix` object</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="2A-2A-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 346</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">**</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyRws</span>,<span class="ruby-ivar">@MyCls</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">**</span> <span class="ruby-identifier">obj</span>} <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: Invalid power Matrix-#{obj.class} &quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-2B" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">+</span><span
+            class="method-args">(m)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sums the current matrix to another</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Matrix` to be summed to</p>
+</li><li>
+<p>*<strong>returns</strong>*: `Matrix` object</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="2B-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 255</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">m</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">similar_to?</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyRws</span>, <span class="ruby-ivar">@MyCls</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">m</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>]}
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-string">&quot;  Argument Error: invalid matrix for + operation&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: can&#39;t sum #{m.class} to Matrix&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-2D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">-</span><span
+            class="method-args">(m)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Subtracts the current matrix to another</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Matrix` to be subtracted to</p>
+</li><li>
+<p>*<strong>returns</strong>*: `Matrix` object</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="2D-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 271</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">m</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">similar_to?</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyRws</span>, <span class="ruby-ivar">@MyCls</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">m</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>]}
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-string">&quot;  Argument Error: invalid matrix for - operation&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: can&#39;t subtact #{m.class} to Matrix&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-2F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">/</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Divides each element of the current matrix to a `Numeric` value</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Numeric`</p>
+</li><li>
+<p>*<strong>returns</strong>*: `Matrix` object</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="2F-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 337</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">/</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyRws</span>,<span class="ruby-ivar">@MyCls</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">/</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">to_f</span>} <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: Invalid division between Matrix and #{obj.class} &quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-3D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Compares the current matrix with another object</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Object` to be compared with</p>
+</li><li>
+<p>*<strong>returns</strong>*: <code>true</code> if two equal matrix are
+compered; <code>false</code> else</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">obj</span>)
+ <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span> <span class="ruby-keyword">then</span>
+   <span class="ruby-keyword">if</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">getRws</span> ) <span class="ruby-keyword">then</span>
+     (<span class="ruby-ivar">@mx</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">export</span>) <span class="ruby-operator">?</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">:</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>)
+   <span class="ruby-keyword">end</span>
+ <span class="ruby-keyword">end</span>
+ <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(x,y)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gives access to each component of a matrix. It accepts two kinds of
+arguments: `Fixnum` or `Range` to get a specific component or a collection
+of components (eg. a whole row)</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Fixnum` or `Range` of row</p>
+</li><li>
+<p>*<strong>argument</strong>*: `Fixnum` or `Range` of column</p>
+</li><li>
+<p>*<strong>returns</strong>*: `Numeric` if an only component has been
+required; `Matrix` else</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">y</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">x</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Range</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">y</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-identifier">nm</span> = []
+    <span class="ruby-identifier">x</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">nm</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y</span>]
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">count</span>,<span class="ruby-value">1</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">nm</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>]}
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">y</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Range</span>
+    <span class="ruby-identifier">nm</span> = []
+    <span class="ruby-identifier">y</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">nm</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">x</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>]
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-identifier">y</span>.<span class="ruby-identifier">count</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">nm</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>]}
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Range</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">y</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Range</span>
+    <span class="ruby-identifier">nm</span> = []
+    <span class="ruby-identifier">x</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">y</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">nm</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>]
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">count</span>,<span class="ruby-identifier">y</span>.<span class="ruby-identifier">count</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">nm</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-identifier">y</span>.<span class="ruby-identifier">count</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>]}
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">(i,j,val)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Allows direct overwriting of a component</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Fixnum` of row number</p>
+</li><li>
+<p>*<strong>argument</strong>*: `Fixnum` of column number</p>
+</li><li>
+<p>*<strong>argument</strong>*: `Numeric` to overwrite the component value</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>,<span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;  Argument Error: Numeric value expected but #{val.class} found&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>
+  <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>] = <span class="ruby-identifier">val</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-can_divide-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">can_divide?</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if the given object can divide the current matrix</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Object`</p>
+</li><li>
+<p>*<strong>returns</strong>*: <code>true</code> if `obj` is a <a
+href="Numeric.html">Numeric</a>; <code>false</code> else</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="can_divide-3F-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 329</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">can_divide?</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-keyword">return</span> (<span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-can_multiply-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">can_multiply?</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if the given object can be multiplied to the matrix</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Object`</p>
+</li><li>
+<p>*<strong>returns</strong>*: <code>true</code>+ if `obj` is a `Numeric` or a
+good `Matrix` for &#39;*&#39; operation;</p>
+</li></ul>
+
+<p><code>false</code> else</p>
+          
+          
+
+          
+          <div class="method-source-code" id="can_multiply-3F-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 288</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">can_multiply?</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span> <span class="ruby-keyword">then</span>
+    (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">getRws</span>) <span class="ruby-operator">?</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">:</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-coerce" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">coerce</span><span
+            class="method-args">(val)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="coerce-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 403</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">coerce</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-keyword">return</span> [<span class="ruby-keyword">self</span>, <span class="ruby-identifier">val</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-del_rwcl" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">del_rwcl</span><span
+            class="method-args">(mx,rw,cl)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Private method to delete rows and columns from a matrix</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Matrix`</p>
+</li><li>
+<p>*<strong>argument</strong>*: row number (`Fixnum`)</p>
+</li><li>
+<p>*<strong>argument</strong>*: column number (`Fixnum`)</p>
+</li><li>
+<p>*<strong>returns</strong>*: `Matrix` object</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="del_rwcl-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 415</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">del_rwcl</span>(<span class="ruby-identifier">mx</span>,<span class="ruby-identifier">rw</span>,<span class="ruby-identifier">cl</span>)
+  [<span class="ruby-identifier">rw</span>,<span class="ruby-identifier">cl</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> 
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>,<span class="ruby-node">&quot;Argument Error: row and column in Fixnum format expected, but #{arg.class} found&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Fixnum</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">rd</span> = <span class="ruby-identifier">mx</span>.<span class="ruby-identifier">export</span>.<span class="ruby-identifier">clone</span>
+  <span class="ruby-identifier">cols</span> = <span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getCls</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">cols</span>
+    <span class="ruby-identifier">rd</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-identifier">cols</span><span class="ruby-operator">+</span><span class="ruby-identifier">rw</span>] = <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">rd</span>[<span class="ruby-identifier">cl</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">cols</span>)<span class="ruby-operator">+</span><span class="ruby-identifier">i</span>] = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">rd</span> = <span class="ruby-identifier">rd</span>.<span class="ruby-identifier">compact</span>
+  <span class="ruby-identifier">rw</span> = <span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">cl</span> = <span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">rw</span>,<span class="ruby-identifier">cl</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">rd</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-identifier">cl</span><span class="ruby-operator">+</span><span class="ruby-identifier">j</span>]}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-export" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">export</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>returns</strong>*: `Array` on which the matrix is saved</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="export-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">export</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@mx</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-getCls" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getCls</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>returns</strong>*: `Fixnum` of number of columns</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getCls-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getCls</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@MyCls</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-getRws" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getRws</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>returns</strong>*: `Fixnum` of number of rows</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="getRws-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getRws</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@MyRws</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-is_squared-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_squared?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if the matrix is squared</p>
+<ul><li>
+<p>*<strong>returns</strong>*: <code>true</code> if the matrix is squared;
+<code>false</code> else</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="is_squared-3F-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 373</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_squared?</span>()
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-operator">?</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">:</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-laplace" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">laplace</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calulates the determinant of the matrix using the Laplace&#39;s algorithm</p>
+<ul><li>
+<p>*<strong>returns</strong>*: `Numeric` value</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="laplace-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 380</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">laplace</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_squared?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">return</span> (<span class="ruby-keyword">self</span>[<span class="ruby-value">0</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">*</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>,<span class="ruby-value">1</span>]) <span class="ruby-operator">-</span> (<span class="ruby-keyword">self</span>[<span class="ruby-value">0</span>,<span class="ruby-value">1</span>] <span class="ruby-operator">*</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>,<span class="ruby-value">0</span>]) <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span> 
+    <span class="ruby-identifier">res</span> = <span class="ruby-value">0</span>
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@MyRws</span>
+      <span class="ruby-identifier">res</span> <span class="ruby-operator">+=</span> (((<span class="ruby-value">-1</span>) <span class="ruby-operator">**</span> <span class="ruby-identifier">i</span>) <span class="ruby-operator">*</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">del_rwcl</span>(<span class="ruby-keyword">self</span>,<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>).<span class="ruby-identifier">laplace</span>) <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">res</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-string">&#39;  Argument Error: Cannot calculate determinat on a non-squared matrix&#39;</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-norm" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">norm</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calculates the norm of a matrix, defined as <a
+href="i,j">sqrt(sum(m</a>**2))</p>
+<ul><li>
+<p>*<strong>returns</strong>*: `Float` value</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="norm-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 362</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">norm</span>()
+ <span class="ruby-identifier">sum</span>=<span class="ruby-value">0</span>
+ <span class="ruby-ivar">@mx</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+   <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span><span class="ruby-identifier">e</span><span class="ruby-operator">**</span><span class="ruby-value">2</span>
+ <span class="ruby-keyword">end</span>
+ <span class="ruby-keyword">return</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">sum</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-similar_to-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">similar_to?</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if this matrix and the given object have the same features</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Object`</p>
+</li><li>
+<p>*<strong>returns</strong>*: <code>true</code> if `obj` is a `Matrix` and
+has the same rows and colum number;</p>
+</li></ul>
+
+<p><code>false</code> else</p>
+          
+          
+
+          
+          <div class="method-source-code" id="similar_to-3F-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">similar_to?</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span> <span class="ruby-keyword">then</span>
+    (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">&amp;&amp;</span> 
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">getRws</span> ) <span class="ruby-operator">?</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">:</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_file</span><span
+            class="method-args">(filename = "")</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Writes the matrix on a file</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `String` of the file path</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="to_file-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_file</span>(<span class="ruby-identifier">filename</span> = <span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span>(<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">filename</span>)) <span class="ruby-keyword">or</span> <span class="ruby-identifier">filename</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-string">&quot;  Argument Error: Invalid directory; Directory not found&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>,<span class="ruby-string">&quot;w&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rw</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@MyRws</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span>(<span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">rw</span>.<span class="ruby-identifier">print</span> <span class="ruby-node">&quot;#{self[i,j]},&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">rw</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{self[i,j+1]}&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>converts this matrix object to a string</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 121</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>()
+    <span class="ruby-identifier">max</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">str</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-ivar">@mx</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">max</span> = <span class="ruby-node">&quot;#{n.round(3)}&quot;</span>.<span class="ruby-identifier">size</span> <span class="ruby-keyword">if</span> <span class="ruby-node">&quot;#{n.round(3)}&quot;</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">max</span>}
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@MyRws</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&#39;|&#39;</span>
+      <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> (<span class="ruby-identifier">i</span><span class="ruby-operator">*</span>(<span class="ruby-ivar">@MyCls</span>))<span class="ruby-operator">...</span>(<span class="ruby-identifier">i</span><span class="ruby-operator">*</span>(<span class="ruby-ivar">@MyCls</span>)<span class="ruby-operator">+</span><span class="ruby-ivar">@MyCls</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">str</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;  #{&quot; &quot;*(max-@mx[j].round(3).to_s.size).abs}#{@mx[j].round(3) }&quot;</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">str</span><span class="ruby-operator">+=</span> <span class="ruby-string">&quot;  |\n&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># * **returns**: `Fixnum` of number of columns</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">getCls</span>()
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@MyCls</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># * **returns**: `Fixnum` of number of rows</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">getRws</span>()
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@MyRws</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># * **returns**: `Array` on which the matrix is saved</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">export</span>()
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@mx</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Updates this matrix after the array in which it was saved has been</span>
+  <span class="ruby-comment"># manually modified</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: `Array` on which the new matrix is saved</span>
+  <span class="ruby-comment"># * **argument**: `Fixnum` of number of rows</span>
+  <span class="ruby-comment"># * **argument**: `Fixnum` of number of columns</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">mat</span>,<span class="ruby-identifier">rws</span>,<span class="ruby-identifier">cls</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">mat</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>) <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-string">&quot;  Argument Error: invalid matrix array found&quot;</span>
+    <span class="ruby-keyword">else</span>
+      [<span class="ruby-identifier">cls</span>,<span class="ruby-identifier">rws</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: colums and rows in Integer format expected but #{e.class} found&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+     <span class="ruby-ivar">@mx</span> = <span class="ruby-identifier">mat</span>
+     <span class="ruby-ivar">@MyRws</span> = <span class="ruby-identifier">rws</span>
+     <span class="ruby-ivar">@MyCls</span> = <span class="ruby-identifier">cls</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Gives access to each component of a matrix.</span>
+  <span class="ruby-comment"># It accepts two kinds of arguments: `Fixnum` or `Range`</span>
+  <span class="ruby-comment"># to get a specific component or a collection of components (eg. a whole row)</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: `Fixnum` or `Range` of row</span>
+  <span class="ruby-comment"># * **argument**: `Fixnum` or `Range` of column  </span>
+  <span class="ruby-comment"># * **returns**: `Numeric` if an only component has been required; `Matrix` else</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">y</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">x</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y</span>]
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Range</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">y</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>
+      <span class="ruby-identifier">nm</span> = []
+      <span class="ruby-identifier">x</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">nm</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y</span>]
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">count</span>,<span class="ruby-value">1</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">nm</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>]}
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">y</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Range</span>
+      <span class="ruby-identifier">nm</span> = []
+      <span class="ruby-identifier">y</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">nm</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">x</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>]
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-identifier">y</span>.<span class="ruby-identifier">count</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">nm</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>]}
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Range</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">y</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Range</span>
+      <span class="ruby-identifier">nm</span> = []
+      <span class="ruby-identifier">x</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">y</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">nm</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>]
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">count</span>,<span class="ruby-identifier">y</span>.<span class="ruby-identifier">count</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">nm</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-identifier">y</span>.<span class="ruby-identifier">count</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>]}
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Allows direct overwriting of a component</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: `Fixnum` of row number</span>
+  <span class="ruby-comment"># * **argument**: `Fixnum` of column number</span>
+  <span class="ruby-comment"># * **argument**: `Numeric` to overwrite the component value</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>,<span class="ruby-identifier">val</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;  Argument Error: Numeric value expected but #{val.class} found&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>] = <span class="ruby-identifier">val</span>
+  <span class="ruby-keyword">end</span>
+ 
+  <span class="ruby-comment"># Compares the current matrix with another object</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: `Object` to be compared with</span>
+  <span class="ruby-comment"># * **returns**: +true+ if two equal matrix are compered; +false+ else  </span>
+  <span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">obj</span>)
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span> <span class="ruby-keyword">then</span>
+     <span class="ruby-keyword">if</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">getRws</span> ) <span class="ruby-keyword">then</span>
+       (<span class="ruby-ivar">@mx</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">export</span>) <span class="ruby-operator">?</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">:</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>)
+     <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Checks if this matrix is different from another object</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: `Object` to be compared with</span>
+  <span class="ruby-comment"># * **returns**: +true+ if the matrix and the object are different; +false+ else</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-operator">!=</span>(<span class="ruby-identifier">obj</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">self</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span> <span class="ruby-operator">?</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>) <span class="ruby-operator">:</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Checks if this matrix and the given object have the same features</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: `Object`</span>
+  <span class="ruby-comment"># * **returns**: +true+ if `obj` is a `Matrix` and has the same rows and colum number;</span>
+  <span class="ruby-comment"># +false+ else</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">similar_to?</span>(<span class="ruby-identifier">obj</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span> <span class="ruby-keyword">then</span>
+      (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">&amp;&amp;</span> 
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">getRws</span> ) <span class="ruby-operator">?</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">:</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Sums the current matrix to another</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: `Matrix` to be summed to</span>
+  <span class="ruby-comment"># * **returns**: `Matrix` object</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">m</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">similar_to?</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyRws</span>, <span class="ruby-ivar">@MyCls</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">m</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>]}
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-string">&quot;  Argument Error: invalid matrix for + operation&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: can&#39;t sum #{m.class} to Matrix&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+ 
+  <span class="ruby-comment"># Subtracts the current matrix to another</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: `Matrix` to be subtracted to</span>
+  <span class="ruby-comment"># * **returns**: `Matrix` object</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">m</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">similar_to?</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyRws</span>, <span class="ruby-ivar">@MyCls</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">m</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>]}
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-string">&quot;  Argument Error: invalid matrix for - operation&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: can&#39;t subtact #{m.class} to Matrix&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Checks if the given object can be multiplied to the matrix</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: `Object`</span>
+  <span class="ruby-comment"># * **returns**: +true++ if `obj` is a `Numeric` or a good `Matrix` for &#39;*&#39; operation;</span>
+  <span class="ruby-comment"># +false+ else</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">can_multiply?</span>(<span class="ruby-identifier">obj</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span> <span class="ruby-keyword">then</span>
+      (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">getRws</span>) <span class="ruby-operator">?</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">:</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Multiplies the current matrix to another</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: `Matrix` to be multiplied to</span>
+  <span class="ruby-comment"># * **returns**: `Matrix` object</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">ob</span>)
+    <span class="ruby-keyword">case</span> 
+      <span class="ruby-keyword">when</span> (<span class="ruby-identifier">ob</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyRws</span>,<span class="ruby-ivar">@MyCls</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">ob</span>}
+      <span class="ruby-keyword">when</span> (<span class="ruby-identifier">ob</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">can_multiply?</span> <span class="ruby-identifier">ob</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">temp</span> = []
+          <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@MyRws</span>
+            <span class="ruby-keyword">for</span> <span class="ruby-identifier">j</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">ob</span>.<span class="ruby-identifier">getCls</span>()
+              <span class="ruby-identifier">temp</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>] = <span class="ruby-value">0</span>
+              <span class="ruby-keyword">for</span> <span class="ruby-identifier">k</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@MyCls</span>
+                <span class="ruby-identifier">temp</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>] <span class="ruby-operator">+=</span> <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">k</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">ob</span>[<span class="ruby-identifier">k</span>,<span class="ruby-identifier">j</span>]
+              <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyRws</span>,<span class="ruby-identifier">ob</span>.<span class="ruby-identifier">getCls</span>()){ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">temp</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span>]}
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: Cannot multiply #{@MyRws}x#{@MyCls} Matrix with #{ob.getRws}x#{ob.getCls}&quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: Cannot multiply Matrix with #{ob.class}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Checks if the given object can divide the current matrix</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: `Object`</span>
+  <span class="ruby-comment"># * **returns**: +true+ if `obj` is a Numeric; +false+ else</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">can_divide?</span>(<span class="ruby-identifier">obj</span>)
+    <span class="ruby-keyword">return</span> (<span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>)
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Divides each element of the current matrix to a `Numeric` value</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: `Numeric`</span>
+  <span class="ruby-comment"># * **returns**: `Matrix` object</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-operator">/</span>(<span class="ruby-identifier">obj</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyRws</span>,<span class="ruby-ivar">@MyCls</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">/</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">to_f</span>} <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: Invalid division between Matrix and #{obj.class} &quot;</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Elevates each element of the current matrix to a `Numeric` exponent</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: `Numeric`</span>
+  <span class="ruby-comment"># * **returns**: `Matrix` object</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-operator">**</span>(<span class="ruby-identifier">obj</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyRws</span>,<span class="ruby-ivar">@MyCls</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span>] <span class="ruby-operator">**</span> <span class="ruby-identifier">obj</span>} <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: Invalid power Matrix-#{obj.class} &quot;</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Trasposes a matrix</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># **returns**: `Matrix` object</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">tr</span>()
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyCls</span>,<span class="ruby-ivar">@MyRws</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">j</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">i</span>]}
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Calculates the norm of a matrix, defined as</span>
+  <span class="ruby-comment"># sqrt(sum(m[i,j]**2))</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **returns**: `Float` value</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">norm</span>()
+   <span class="ruby-identifier">sum</span>=<span class="ruby-value">0</span>
+   <span class="ruby-ivar">@mx</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+     <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span><span class="ruby-identifier">e</span><span class="ruby-operator">**</span><span class="ruby-value">2</span>
+   <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">return</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">sum</span>)
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Checks if the matrix is squared</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **returns**: +true+ if the matrix is squared; +false+ else</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">is_squared?</span>()
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-operator">?</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>) <span class="ruby-operator">:</span> (<span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Calulates the determinant of the matrix using the Laplace&#39;s algorithm</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **returns**: `Numeric` value</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">laplace</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_squared?</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">return</span> (<span class="ruby-keyword">self</span>[<span class="ruby-value">0</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">*</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>,<span class="ruby-value">1</span>]) <span class="ruby-operator">-</span> (<span class="ruby-keyword">self</span>[<span class="ruby-value">0</span>,<span class="ruby-value">1</span>] <span class="ruby-operator">*</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>,<span class="ruby-value">0</span>]) <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span> 
+      <span class="ruby-identifier">res</span> = <span class="ruby-value">0</span>
+      <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-ivar">@MyRws</span>
+        <span class="ruby-identifier">res</span> <span class="ruby-operator">+=</span> (((<span class="ruby-value">-1</span>) <span class="ruby-operator">**</span> <span class="ruby-identifier">i</span>) <span class="ruby-operator">*</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">*</span> <span class="ruby-identifier">del_rwcl</span>(<span class="ruby-keyword">self</span>,<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>).<span class="ruby-identifier">laplace</span>) <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">i</span>,<span class="ruby-value">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">res</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-string">&#39;  Argument Error: Cannot calculate determinat on a non-squared matrix&#39;</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment"># Builds an identity matrix</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># * **argument**: `Fixnum` of the matrix dimension</span>
+  <span class="ruby-comment"># * **returns**: `Matrix` object</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">identity</span>(<span class="ruby-identifier">n</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;Argument Error: expecting Fixnum value, but #{n.class} found&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Fixnum</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">n</span>,<span class="ruby-identifier">n</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span>  (<span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">j</span>) <span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span> }
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">coerce</span>(<span class="ruby-identifier">val</span>)
+    <span class="ruby-keyword">return</span> [<span class="ruby-keyword">self</span>, <span class="ruby-identifier">val</span>]
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">private</span>
+   
+   <span class="ruby-comment"># Private method to delete rows and columns from a matrix</span>
+   <span class="ruby-comment">#</span>
+   <span class="ruby-comment"># * **argument**: `Matrix`</span>
+   <span class="ruby-comment"># * **argument**: row number (`Fixnum`)</span>
+   <span class="ruby-comment"># * **argument**: column number (`Fixnum`)</span>
+   <span class="ruby-comment"># * **returns**: `Matrix` object </span>
+   <span class="ruby-keyword">def</span> <span class="ruby-identifier">del_rwcl</span>(<span class="ruby-identifier">mx</span>,<span class="ruby-identifier">rw</span>,<span class="ruby-identifier">cl</span>)
+     [<span class="ruby-identifier">rw</span>,<span class="ruby-identifier">cl</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> 
+       <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>,<span class="ruby-node">&quot;Argument Error: row and column in Fixnum format expected, but #{arg.class} found&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Fixnum</span>
+     <span class="ruby-keyword">end</span>
+     <span class="ruby-identifier">rd</span> = <span class="ruby-identifier">mx</span>.<span class="ruby-identifier">export</span>.<span class="ruby-identifier">clone</span>
+     <span class="ruby-identifier">cols</span> = <span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getCls</span>
+     <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">cols</span>
+       <span class="ruby-identifier">rd</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-identifier">cols</span><span class="ruby-operator">+</span><span class="ruby-identifier">rw</span>] = <span class="ruby-keyword">nil</span>
+       <span class="ruby-identifier">rd</span>[<span class="ruby-identifier">cl</span><span class="ruby-operator">*</span>(<span class="ruby-identifier">cols</span>)<span class="ruby-operator">+</span><span class="ruby-identifier">i</span>] = <span class="ruby-keyword">nil</span>
+     <span class="ruby-keyword">end</span>
+     <span class="ruby-identifier">rd</span> = <span class="ruby-identifier">rd</span>.<span class="ruby-identifier">compact</span>
+     <span class="ruby-identifier">rw</span> = <span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getRws</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+     <span class="ruby-identifier">cl</span> = <span class="ruby-identifier">mx</span>.<span class="ruby-identifier">getCls</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+     <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">rw</span>,<span class="ruby-identifier">cl</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">rd</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">*</span><span class="ruby-identifier">cl</span><span class="ruby-operator">+</span><span class="ruby-identifier">j</span>]}
+   <span class="ruby-keyword">end</span>
+  
+   
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-tr" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tr</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Trasposes a matrix</p>
+
+<p>*<strong>returns</strong>*: `Matrix` object</p>
+          
+          
+
+          
+          <div class="method-source-code" id="tr-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 354</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tr</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@MyCls</span>,<span class="ruby-ivar">@MyRws</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>,<span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@mx</span>[<span class="ruby-identifier">j</span> <span class="ruby-operator">*</span> <span class="ruby-ivar">@MyCls</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">i</span>]}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">(mat,rws,cls)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Updates this matrix after the array in which it was saved has been manually
+modified</p>
+<ul><li>
+<p>*<strong>argument</strong>*: `Array` on which the new matrix is saved</p>
+</li><li>
+<p>*<strong>argument</strong>*: `Fixnum` of number of rows</p>
+</li><li>
+<p>*<strong>argument</strong>*: `Fixnum` of number of columns</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/CnGal_Matrix_class.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">mat</span>,<span class="ruby-identifier">rws</span>,<span class="ruby-identifier">cls</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">mat</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>) <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-string">&quot;  Argument Error: invalid matrix array found&quot;</span>
+  <span class="ruby-keyword">else</span>
+    [<span class="ruby-identifier">cls</span>,<span class="ruby-identifier">rws</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">MyArgError</span>, <span class="ruby-node">&quot;  Argument Error: colums and rows in Integer format expected but #{e.class} found&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+   <span class="ruby-ivar">@mx</span> = <span class="ruby-identifier">mat</span>
+   <span class="ruby-ivar">@MyRws</span> = <span class="ruby-identifier">rws</span>
+   <span class="ruby-ivar">@MyCls</span> = <span class="ruby-identifier">cls</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

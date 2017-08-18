@@ -1,0 +1,18 @@
+Fri, 18 Aug 2017 15:26:58 +0200
+README.md	Fri, 18 Aug 2017 15:01:24 +0200
+lib/linmeric/Archive.rb	Fri, 18 Aug 2017 11:49:21 +0200
+lib/linmeric/Calculator.rb	Thu, 10 Aug 2017 21:45:23 +0200
+lib/linmeric/CnGal_Matrix_class.rb	Wed, 16 Aug 2017 17:32:22 +0200
+lib/linmeric/CnGal_new_classes.rb	Fri, 18 Aug 2017 11:53:31 +0200
+lib/linmeric/CnGal_tools.rb	Thu, 10 Aug 2017 21:32:14 +0200
+lib/linmeric/Error_print.rb	Thu, 10 Aug 2017 22:16:50 +0200
+lib/linmeric/Function_class.rb	Thu, 17 Aug 2017 17:30:15 +0200
+lib/linmeric/Integrators.rb	Fri, 18 Aug 2017 11:54:36 +0200
+lib/linmeric/LU.rb	Fri, 18 Aug 2017 11:55:16 +0200
+lib/linmeric/Lexer.rb	Tue, 15 Aug 2017 18:26:17 +0200
+lib/linmeric/Listener.rb	Tue, 15 Aug 2017 18:49:51 +0200
+lib/linmeric/Parser.rb	Fri, 18 Aug 2017 11:45:21 +0200
+lib/linmeric/Scopify.rb	Wed, 16 Aug 2017 17:40:41 +0200
+lib/linmeric/Sizer.rb	Thu, 17 Aug 2017 12:51:09 +0200
+lib/linmeric/Token.rb	Wed, 16 Aug 2017 17:46:34 +0200
+lib/linmeric/version.rb	Thu, 17 Aug 2017 11:01:29 +0200

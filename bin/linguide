@@ -1,0 +1,23 @@
+#! /usr/bin/env ruby
+
+path = File.expand_path(__FILE__)
+dir  = File.dirname(path)
+
+case ARGV[0]
+  when "en"
+    exec( "cd
+           cd #{dir}
+           cd ..
+           cd doc
+           gedit Instructions_en.txt")
+  when "it"
+    exec( "cd
+           cd #{dir}
+           cd ..
+           cd doc
+           gedit Instructions_it.txt")   
+  when "-h"
+    puts "supported languages:\n * en      type: linguide en\n * it      type: linguide it"
+  else
+    exit 0  
+end

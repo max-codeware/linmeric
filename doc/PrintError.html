@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module PrintError - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-default">::default</a>
+    
+    <li ><a href="#method-c-missing">::missing</a>
+    
+    <li ><a href="#method-c-missing_expression_after_equal">::missing_expression_after_equal</a>
+    
+    <li ><a href="#method-c-missing_general_string">::missing_general_string</a>
+    
+    <li ><a href="#method-c-missing_integ_range">::missing_integ_range</a>
+    
+    <li ><a href="#method-c-missmatch">::missmatch</a>
+    
+    <li ><a href="#method-c-no_final_quotes">::no_final_quotes</a>
+    
+    <li ><a href="#method-c-numPoint_missing">::numPoint_missing</a>
+    
+    <li ><a href="#method-c-print">::print</a>
+    
+    <li ><a href="#method-c-reduced">::reduced</a>
+    
+    <li ><a href="#method-c-unexpected_token_in_solve">::unexpected_token_in_solve</a>
+    
+    <li ><a href="#method-c-unknown">::unknown</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-PrintError">
+  <h1 id="module-PrintError" class="module">
+    module PrintError
+  </h1>
+
+  <section class="description">
+    
+<p>This modue provides a set of error messages for linmeric</p>
+<dl class="rdoc-list note-list"><dt>Author
+<dd>
+<p>Massimiliano Dal Mas (<a
+href="mailto:max.codeware@gmail.com">max.codeware@gmail.com</a>)</p>
+</dd><dt>License
+<dd>
+<p>Distributed under MIT license</p>
+</dd></dl>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-default" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default</span><span
+            class="method-args">(token,expression)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>argument</strong>*: unexpected <a href="Token.html">Token</a></p>
+</li><li>
+<p>*<strong>argument</strong>*: expression (commands) where the error has been
+found</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="default-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Error_print.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">default</span>(<span class="ruby-identifier">token</span>,<span class="ruby-identifier">expression</span>)
+  <span class="ruby-identifier">message</span> = <span class="ruby-node">&quot;  Sintax Error: unexpected #{token.attribute} token &#39;#{token.me}&#39; found&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">print</span>(<span class="ruby-identifier">message</span>,<span class="ruby-identifier">expression</span>,<span class="ruby-identifier">token</span>.<span class="ruby-identifier">position</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-missing" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">missing</span><span
+            class="method-args">(token,expression)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>argument</strong>*: <a href="Token.html">Token</a> arguments are
+missing for</p>
+</li><li>
+<p>*<strong>argument</strong>*: expression (commands) where the error has been
+found</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="missing-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Error_print.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">missing</span>(<span class="ruby-identifier">token</span>,<span class="ruby-identifier">expression</span>)
+  <span class="ruby-identifier">message</span> = <span class="ruby-node">&quot;  Sintax Error: missing argument for &#39;#{token.me}&#39; #{token.attribute}&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">print</span>(<span class="ruby-identifier">message</span>,<span class="ruby-identifier">expression</span>,<span class="ruby-identifier">token</span>.<span class="ruby-identifier">position</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-missing_expression_after_equal" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">missing_expression_after_equal</span><span
+            class="method-args">(pos,expression)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>argument</strong>*: position where the error is located</p>
+</li><li>
+<p>*<strong>argument</strong>*: expression (commands) where the error has been
+found</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="missing_expression_after_equal-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Error_print.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">missing_expression_after_equal</span>(<span class="ruby-identifier">pos</span>,<span class="ruby-identifier">expression</span>)
+  <span class="ruby-identifier">message</span> = <span class="ruby-string">&quot;  Sintax Error: missing expression after EQUAL operator&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">print</span>(<span class="ruby-identifier">message</span>,<span class="ruby-identifier">expression</span>,<span class="ruby-identifier">pos</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-missing_general_string" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">missing_general_string</span><span
+            class="method-args">(position,expression)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>argument</strong>*: position where the error is located</p>
+</li><li>
+<p>*<strong>argument</strong>*: expression (commands) where the error has been
+found</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="missing_general_string-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Error_print.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">missing_general_string</span>(<span class="ruby-identifier">position</span>,<span class="ruby-identifier">expression</span>)
+  <span class="ruby-identifier">message</span> = <span class="ruby-string">&quot;  Sintax Error: missing agument block&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">print</span>(<span class="ruby-identifier">message</span>,<span class="ruby-identifier">expression</span>,<span class="ruby-identifier">position</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-missing_integ_range" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">missing_integ_range</span><span
+            class="method-args">(pos,expression)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>argument</strong>*: position where the error is located</p>
+</li><li>
+<p>*<strong>argument</strong>*: expression (commands) where the error has been
+found</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="missing_integ_range-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Error_print.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">missing_integ_range</span>(<span class="ruby-identifier">pos</span>,<span class="ruby-identifier">expression</span>)
+  <span class="ruby-identifier">message</span> = <span class="ruby-string">&quot;  Sintax Error: missing integration range for &#39;integ:&#39; method&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">print</span>(<span class="ruby-identifier">message</span>,<span class="ruby-identifier">expression</span>,<span class="ruby-identifier">pos</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-missmatch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">missmatch</span><span
+            class="method-args">(token,expression,expectation)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>argument</strong>*: missmatched <a href="Token.html">Token</a>
+found</p>
+</li><li>
+<p>*<strong>argument</strong>*: expression (commands) where the error has been
+found</p>
+</li><li>
+<p>*<strong>argument</strong>*: token type (String) expected</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="missmatch-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Error_print.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">missmatch</span>(<span class="ruby-identifier">token</span>,<span class="ruby-identifier">expression</span>,<span class="ruby-identifier">expectation</span>)
+  <span class="ruby-identifier">message</span> = <span class="ruby-node">&quot;  Sintax Error: expecting #{expectation} but #{token.attribute} token &#39;#{token.me}&#39; found&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">print</span>(<span class="ruby-identifier">message</span>,<span class="ruby-identifier">expression</span>,<span class="ruby-identifier">token</span>.<span class="ruby-identifier">position</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-no_final_quotes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">no_final_quotes</span><span
+            class="method-args">(expression,position)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>argument</strong>*: expression (commands) where the error has been
+found</p>
+</li><li>
+<p>*<strong>argument</strong>*: position where the error is located</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="no_final_quotes-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Error_print.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">no_final_quotes</span>(<span class="ruby-identifier">expression</span>,<span class="ruby-identifier">position</span>)
+  <span class="ruby-identifier">message</span> = <span class="ruby-string">&quot;  Sintax Error: missing quotes for block&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">print</span>(<span class="ruby-identifier">message</span>,<span class="ruby-identifier">expression</span>,<span class="ruby-identifier">position</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-numPoint_missing" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">numPoint_missing</span><span
+            class="method-args">(position,expression)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>argument</strong>*: position where the error is located</p>
+</li><li>
+<p>*<strong>argument</strong>*: expression (commands) where the error has been
+found</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="numPoint_missing-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Error_print.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">numPoint_missing</span>(<span class="ruby-identifier">position</span>,<span class="ruby-identifier">expression</span>)
+  <span class="ruby-identifier">message</span> = <span class="ruby-string">&quot;  Sintax Error: number of points is missing&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">print</span>(<span class="ruby-identifier">message</span>,<span class="ruby-identifier">expression</span>,<span class="ruby-identifier">position</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-print" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">print</span><span
+            class="method-args">(message,expression,pos)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Main function that prints the error message</p>
+<ul><li>
+<p>*<strong>argument</strong>*: message to be printed (string)</p>
+</li><li>
+<p>*<strong>argument</strong>*: expression (commands) where the error has been
+found</p>
+</li><li>
+<p>*<strong>argument</strong>*: error position</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="print-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Error_print.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">print</span>(<span class="ruby-identifier">message</span>,<span class="ruby-identifier">expression</span>,<span class="ruby-identifier">pos</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">message</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">expression</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot; &quot;</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">pos</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;^&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-reduced" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reduced</span><span
+            class="method-args">(token,expression)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>argument</strong>*: unexpected <a href="Token.html">Token</a></p>
+</li><li>
+<p>*<strong>argument</strong>*: expression (commands) where the error has been
+found</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="reduced-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Error_print.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">reduced</span>(<span class="ruby-identifier">token</span>,<span class="ruby-identifier">expression</span>)
+  <span class="ruby-identifier">message</span> = <span class="ruby-node">&quot;  Sintax Error: unexpected #{token.attribute} &#39;#{token.me}&#39; found&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">print</span>(<span class="ruby-identifier">message</span>,<span class="ruby-identifier">expression</span>,<span class="ruby-identifier">token</span>.<span class="ruby-identifier">position</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-unexpected_token_in_solve" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unexpected_token_in_solve</span><span
+            class="method-args">(token,expression)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>argument</strong>*: unexpected <a href="Token.html">Token</a>
+found</p>
+</li><li>
+<p>*<strong>argument</strong>*: expression (commands) where the error has been
+found</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="unexpected_token_in_solve-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Error_print.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">unexpected_token_in_solve</span>(<span class="ruby-identifier">token</span>,<span class="ruby-identifier">expression</span>)
+  <span class="ruby-identifier">message</span> = <span class="ruby-node">&quot;  Sintax Error: unexpected #{token.attribute} token &#39;#{token.me}&#39; in &#39;solve:&#39; args&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">print</span>(<span class="ruby-identifier">message</span>,<span class="ruby-identifier">expression</span>,<span class="ruby-identifier">token</span>.<span class="ruby-identifier">position</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-unknown" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unknown</span><span
+            class="method-args">(token,expression)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <ul><li>
+<p>*<strong>argument</strong>*: unknown <a href="Token.html">Token</a> found</p>
+</li><li>
+<p>*<strong>argument</strong>*: expression (commands) where the error has been
+found</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="unknown-source">
+            <pre><span class="ruby-comment"># File lib/linmeric/Error_print.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">unknown</span>(<span class="ruby-identifier">token</span>,<span class="ruby-identifier">expression</span>)
+  <span class="ruby-identifier">message</span> = <span class="ruby-node">&quot;  Sintax Error: unknown #{token.attribute} &#39;#{token.me}&#39; found&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">print</span>(<span class="ruby-identifier">message</span>,<span class="ruby-identifier">expression</span>,<span class="ruby-identifier">token</span>.<span class="ruby-identifier">position</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

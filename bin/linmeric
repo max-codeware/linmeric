@@ -1,0 +1,513 @@
+#! /usr/bin/env ruby
+
+require "linmeric_bin"
+require_relative "help/Help.rb"
+
+Help.ask if ["-h","--help"].include? ARGV[0]
+
+@error = false
+@vars = {}
+@operators = {
+              :+ => lambda do |a,b|
+                      a = evaluate(a) if a.is_a? Array
+                      b = evaluate(b) if b.is_a? Array
+                      a = replace_var(a) if a.is_a? String
+                      b = replace_var(b) if b.is_a? String
+                      unless @error
+                        if a.similar_to? b then
+                          return a + b
+                        elsif a.is_a? Matrix and b.is_a? Matrix then
+                          t = b.tr
+                          if a.similar_to? t then
+                            a += t
+                            return a
+                          else
+                            puts  "  Argument Error: Cannot sum #{a.getRws}x#{a.getCls} matrix with #{b.getRws}x#{b.getCls}"
+                            @error = true
+                            return nil
+                          end  
+                        else          
+                          puts "  Math Error: cannot sum #{a.class} with #{b.class}" 
+                          @error = true
+                          return nil
+                        end
+                      end
+                    end,
+                    
+              :- => lambda do |a,b|
+                      a = evaluate(a) if a.is_a? Array
+                      b = evaluate(b) if b.is_a? Array
+                      a = replace_var(a) if a.is_a? String
+                      b = replace_var(b) if b.is_a? String
+                      unless @error
+                        if (a.is_a? Numeric or a == nil) and b.is_a? Numeric then
+                          return (a || 0) - b
+                        elsif a.is_a? Matrix and b.is_a? Matrix then
+                          if a.similar_to? b then
+                            a = a - b
+                          else
+                            t = b.tr
+                            if a.similar_to? t then
+                              a = a - t
+                            else
+                              puts  "  Argument Error: Cannot subtract #{a.getRws}x#{a.getCls} matrix with #{b.getRws}x#{b.getCls}"
+                              @error = true
+                              return nil
+                            end
+                          end
+                            return a
+                        else
+                          puts "  Math Error: cannot subtract #{a.class} with #{b.class}"
+                          @error = true
+                          return nil
+                        end
+                      end
+                    end, 
+                    
+              :"=" => lambda do |a,b| 
+                        a = evaluate(a) if a.is_a? Array
+                        b = evaluate(b) if b.is_a? Array
+                        b = replace_var(b) if b.is_a? String
+                        unless @error
+                          if a.is_a? Numeric or a.is_a? Matrix then
+                            a == b ? (puts "=> true") : (puts "=> false")
+                          else
+                            @vars[a] = b
+                            if not b.is_a? Matrix then
+                              puts "=> #{b}"
+                            else
+                              puts "=>"
+                              puts b
+                            end
+                          end
+                        end
+                      end,
+                      
+              :* => lambda do |a,b|
+                      a = evaluate(a) if a.is_a? Array
+                      b = evaluate(b) if b.is_a? Array
+                      a = replace_var(a) if a.is_a? String
+                      b = replace_var(b) if b.is_a? String
+                      unless @error
+                        if a.can_multiply? b then
+                          return a * b
+                        elsif a.is_a? Matrix and b.is_a? Matrix then
+                          t = b.tr
+                          if a.can_multiply? t then
+                            return a * t
+                          else
+                            puts "  Cannot multiply #{a.getRws}x#{a.getCls} matrix with #{b.getRws}x#{b.getCls}"
+                            @error = true
+                            return nil
+                          end
+                        else
+                          puts "  Cannot multiply #{a.class} with #{b.class}"
+                        end
+                      end
+                    end,
+                    
+              :/ => lambda do |a,b|
+                      a = evaluate(a) if a.is_a? Array
+                      b = evaluate(b) if b.is_a? Array
+                      a = replace_var(a) if a.is_a? String
+                      b = replace_var(b) if b.is_a? String
+                      unless @error
+                        if (a.can_divide? b) and b != 0 then
+                          return a / b.to_f
+                        else
+                          @error = true
+                          if b == 0 then
+                            puts "  Math Error: division for 0"
+                          else
+                            puts "  Math Error: invalid divison between #{a.class} and #{b.class}"
+                          end
+                          return nil
+                        end
+                      end
+                    end,
+                    
+              :^ => lambda do |a,b|
+                      a = evaluate(a) if a.is_a? Array
+                      b = evaluate(b) if b.is_a? Array
+                      a = replace_var(a) if a.is_a? String
+                      b = replace_var(b) if b.is_a? String
+                      unless @error
+                        if a != 0 or b != 0 then
+                          if a.is_a? Numeric and b.is_a? Numeric then
+                            return a ** b
+                          elsif (a.is_a? Matrix and b.is_a? Numeric) or (a.is_a? Numeric and b.is_a? Matrix)
+                            return a ** b
+                          else
+                            puts "  Math Error: invalid power #{a.class}-#{b.class}"
+                            @error = true
+                            return nil
+                          end
+                        else
+                          puts "  Math Error: 0^0"
+                          @error = true
+                          return nil
+                        end
+                      end
+                    end,
+                    
+              :> => lambda do |a,b|
+                      a = evaluate(a) if a.is_a? Array
+                      a = replace_var(a) if a.is_a? String
+                      b = b - '"'
+                      unless @error
+                        if a.is_a? Matrix then
+                          a.to_file(b)
+                        else
+                          if Dir.exist? File.dirname(b) then
+                            File.open(b,"w") do |ln|
+                              ln.puts "#{a}"
+                            end
+                          else
+                            puts "  Argument Error: Invalid directory; Directory not found"
+                            @error = true
+                          end
+                        end
+                      end
+                      return nil
+                    end,
+                 
+              :"t:" => lambda do |a|
+                         a = evaluate(a) if a.is_a? Array
+                         a = replace_var(a) if a.is_a? String
+                         unless @error
+                           if a.is_a? Matrix then
+                             return a.tr
+                           else
+                             puts "  Math Error: cannot traspose a #{a.class} value"
+                             @error = true
+                             return nil
+                           end
+                         end
+                       end,
+              
+              :"det:" => lambda do |a|
+                           a = evaluate(a) if a.is_a? Array
+                           a = replace_var(a) if a.is_a? String
+                           unless @error
+                             if a.is_a? Matrix then
+                               if a.is_squared? then
+                                 return a.laplace
+                               else
+                                 puts "  Math Error: determinant on a non-squared Matrix"
+                                 @error = true
+                                 return nil
+                               end
+                             else
+                               puts "  Math Error: determinant on #{a.class} value"
+                               @error = true
+                               return nil
+                             end
+                           end
+                         end,
+              
+              :"norm:" => lambda do |a|
+                         a = evaluate(a) if a.is_a? Array
+                         a = replace_var(a) if a.is_a? String
+                         unless @error
+                           if a.is_a? Matrix then
+                             return a.norm
+                           else
+                             puts "  Math Error: norm on a #{a.class} value"
+                             @error = true
+                             return nil
+                           end
+                         end
+                       end,
+                       
+              :"id_mx:" => lambda do |a|
+                            a = evaluate(a) if a.is_a? Array
+                            a = replace_var(a) if a.is_a? String
+                            unless @error
+                              if a.is_a? Fixnum 
+                                return Matrix.identity(a) if a > 0
+                              end
+                              @error = true
+                              puts "  Argument Error: bad value #{a} for Identity Matrix"
+                              return nil
+                            end
+                          end,
+                          
+              :"from:" => lambda do |a|
+                            a = a - "\"" if a.is_a? String
+                            return Filename.new(a) if a.is_a? String
+                            @error = true
+                            puts "  Argument Error: bad filename #{a}"
+                            return nil
+                          end,
+                          
+              :"as:" => lambda do |a|
+                          if a.include? '"' then
+                            a = a - '"'
+                            return Function.new(a)
+                          else
+                            return replace_var(a)
+                          end
+                        end,
+                        
+              :"mx:" => lambda do |a,b|
+                          b = evaluate(b) if b.is_a? Array
+                          b = replace_var(b) if b.is_a? String
+                          a = evaluate(a) if a.is_a? Array
+                          unless a.class == Filename
+                            if '123456789,"'.contain_all? a then
+                              a = Dim.new(a) 
+                              if a.sx == nil then
+                                @error = true
+                                return nil
+                              end
+                            else
+                              puts "viene"
+                              puts "  Argument Error: invalid range for matrix"
+                              @error = true
+                              return nil
+                            end
+                          end
+                          unless @error
+                            if b == nil then
+                              case a.class.to_s
+                                when "Filename"
+                                  m = Matrix.from_file(a)
+                                when "Dim"
+                                  m = Matrix.new(a.sx,a.dx)
+                                else
+                                  puts " Argument Error: invalid #{a.class} #{a} found"
+                                  @error = true
+                                  return nil
+                              end
+                            else
+                              unless b.is_a? Function
+                                @error = true 
+                                return nil
+                              end
+                              unless @error
+                                b = b.to_block(2)
+                                if b == nil then
+                                  @error = true
+                                  puts "  Argument Error: bad function for Matrix"
+                                  return nil
+                                end
+                                m = eval("  Matrix.new(#{a.sx},#{a.dx}) #{b}")
+                              end
+                            end
+                            return m
+                          end
+                          return nil
+                        end,
+                        
+              :"f:" => lambda do |a|
+                         a = a - '"'
+                         a = Function.new(a)
+                         unless a.ok?
+                           puts "  Argument Error: bad function inserted. Maybe sintax error?"
+                           @error = true
+                           return nil
+                         end
+                         return a
+                       end,
+                       
+              :"shw:" => lambda do |a|
+                           if a.is_a? String then
+                             a = replace_var(a)
+                             unless @error
+                               print "=> " if not a.is_a? Matrix
+                               puts "=>" if a.is_a? Matrix
+                               a.show; puts
+                               return nil
+                             end
+                           else
+                             puts "  Argument Error: Bad argument #{a} for 'shw:' command"
+                           end
+                         end,
+                         
+              :"shwvar:" => lambda do ||
+                              if @vars.size > 0
+                                Tool.print_stack(@vars)
+                              else
+                                puts "  No variables defined yet"
+                              end
+                            end,
+                            
+              :"solve:" => lambda do |a,b|
+                             a = evaluate(a) if a.is_a? Array
+                             b = evaluate(b) if b.is_a? Array
+                             a = replace_var(a) if a.is_a? String
+                             b = replace_var(b) if b.is_a? String
+                             [a,b].each do |m|
+                               unless m.is_a? Matrix
+                                 puts "  Argument Error: expecting matrix for LU factorization, but '#{m.class}' found"
+                                 @error = true
+                                 return nil
+                               end
+                             end
+                             unless a.is_squared?
+                               puts "  Argument Error: non-squared matrix for LU factorization found"
+                               @error = true
+                               return nil
+                             end
+                             unless a.getRws == b.getRws
+                               puts "  Argument Error: invalid #{b.getRws}x1 solution for #{a.getRws}x#{a.getCls} matrix"
+                               @error = true
+                               return nil
+                             end
+                             unless b.getCls == 1
+                               puts "  Argument Error: invalid solution matrix #{b.getRws}x#{b.getCls}"
+                               @error = true
+                               return nil
+                             end
+                             LU.reset
+                             solution = LU.factorize(a,b)
+                             @vars['L'] = LU.L
+                             @vars['U'] = LU.U
+                             return solution
+                           end,
+                            
+              :"integ:" => lambda do |f,r,n,m|
+                             if f.is_a? String then
+                               if f.include? '"'
+                                 f = f - '"'
+                                 f = Function.new(f)
+                                 unless f.ok? 
+                                   @error = true
+                                   puts "  Argument Error: bad function for integration"
+                                   return nil
+                                 end
+                               else
+                                 f = replace_var(f)
+                               end
+                             end
+                             unless  f.is_a? Function
+                               puts "  Argument Error: function for integration expected but #{f.class} found"
+                               @error = true
+                               return nil
+                             end
+                             r = Dim.new(r)
+                             if r.sx == nil then
+                               @error = true
+                               return nil
+                             end
+                             if n <= 0 then
+                               puts "  Argument Error: bad NumPoints for integration"
+                               @error = true
+                               return nil
+                             end
+                             unless @error
+                               if m == nil then
+                                 res = f.integrate(r,n)
+                               else
+                                 res = f.integrate(r,n,m)
+                               end
+                               if res == nil
+                                 @error = true
+                                 return nil
+                               else
+                                 return res
+                               end
+                             end
+                           end
+                        
+             }
+             
+
+
+def replace_var(var)
+  if @vars.include? var then
+    return @vars[var]
+  else
+    puts " Argument Error: variable '#{var}' not defined"
+    @error = true
+    return nil
+  end
+end
+
+
+def evaluate(token_arr)
+  return 0 if token_arr.size == 0
+  return token_arr[0] if token_arr.size == 1 and !(token_arr[0].is_a? Array) and !(token_arr[0].is_a? Symbol)
+  return evaluate(token_arr[0]) if token_arr.size == 1 and token_arr[0].is_a? Array
+  for i in 0...token_arr.size
+    if token_arr[i].is_a? Symbol then
+      if @operators.include? token_arr[i] then
+        if Tool.keys.include? token_arr[i].to_s then
+          case token_arr[i]
+            when :"solve:"
+              token_arr[i+2] = @operators[token_arr[i]][token_arr[i+1],token_arr[i+2]]
+            when :"mx:"
+              token_arr[i+2] = @operators[token_arr[i]][token_arr[i+1],token_arr[i+2]]
+            when :"integ:"
+              token_arr[i+4] = @operators[token_arr[i]][token_arr[i+1],
+                                                        token_arr[i+2],
+                                                        token_arr[i+3],
+                                                        token_arr[i+4]]
+            when :"shwvar:"
+              token_arr[i] = @operators[token_arr[i]][] 
+            else
+              token_arr[i+1] = @operators[token_arr[i]][token_arr[i+1]]
+          end
+        else
+          token_arr[i+1] = @operators[token_arr[i]][token_arr[i - 1],token_arr[i + 1]]
+        end
+      else
+        puts " Unknown keyword or operator '#{token_arr[i]}'"
+        @error = true
+        return nil
+      end
+    end
+   return nil if @error
+  end
+  return token_arr[token_arr.size - 1]
+end
+
+
+
+
+##############################################
+#                    BODY                    #
+##############################################             
+
+scp    = Scp.new
+parser = Parser.new
+reader = Listener.new
+sizer = Sizer.new
+print "Linmeric-main> "
+begin
+  string = reader.gets
+  while string != "exit"
+    if sizer.analyze(string)
+      tree  = parser.parse(scp.scopify(string.compact))
+      unless tree == nil or tree == []
+        ev = evaluate(tree)
+        ev = replace_var(ev) if ev.is_a? String
+        unless (string.include? '=') or (string.include? "shw:" or
+                                     string.include? "shwvar:") or @error
+          if ev.is_a? Matrix then
+            puts "=>"
+            puts ev
+          else
+            puts "=> #{ev}"
+          end
+        end
+      end
+    end
+    @error = false
+    parser.reset
+    print "Linmeric-main> "
+#    reader.reset
+    string = reader.gets
+  end
+
+rescue  => error
+  puts error
+  retry
+end
+       
+             
+             
+             
+             
+             
+             
