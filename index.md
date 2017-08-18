@@ -7,7 +7,7 @@ From the command line type:
 ```sh
   $ sudo gem install linmeric
 ```
-or go to http://rubygems.org/gems/linmeric and download the .gem file. Then open the directory where the .gem file is saved on the commend line and type:
+or go to (http://rubygems.org/gems/linmeric) and download the .gem file. Then open the directory where the .gem file is saved on the commend line and type:
 ```sh
   $ sudo gem install ./linmeric-0.2.0.gem
 ```
