@@ -56,3 +56,6 @@ Linguide is also provided by a `-h` command to view its help guide
 ## Contributing:
 Bug and mistake reports and pull requests are absolutely welcomed!
 To report any bug in the code or a mistake in the provided guides or in this website, please email me at max.codeware@gmail.com or on [GitHub](https://github.com/max-codeware/linmeric) to pull requests too.
+
+
+*note*: Further instructions will be added as soon as possible
