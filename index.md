@@ -9,11 +9,14 @@ From the command line type:
 ```
 or click [here](https://rubygems.org/gems/linmeric) to go to the linmeric rubygems page and download the .gem file. Then open the directory where the .gem file is saved on the commend line and type:
 ```sh
-  $ sudo gem install ./linmeric-0.2.0.gem
+  $ sudo gem install ./linmeric-<version>.gem
 ```
+`<version>` must be replaced by the version number of the gem you downloaded
 
-## Version 0.2.0
-Some changement has been made after having published linmeric-0.1.0:
+## Version changes:
+### 0.1.0
+- first release
+### 0.2.0
 - A better documentation has been provided
 - Matrix expression converter has been rewritten to get better performances
 - Help menu and guides have been added
@@ -42,7 +45,7 @@ From the command line type:
 ```sh
   $ linguide <lang>
 ```
-to open the user guide on gedit. `<lang>` Must be replaced by the language you want.
+to open the user guide on gedit. `<lang>` must be replaced by the language you want.
 The supported languages are:
 - en    (English)
 - it    (Italian)
