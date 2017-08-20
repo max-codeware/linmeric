@@ -27,8 +27,54 @@ or click [here](https://rubygems.org/gems/linmeric) to go to the linmeric rubyge
 From the command line type:
 ```sh
   $ linmeric
+  Linmeric-main> 
 ```
 and the calculator will be immediately run.
+
+## Simple examples:
+### Using linmeric as an ordinary calculator:
+Linmeric can be used as a normal calculator of course, just simply typing the numeric expressions. For instance we want to know the result of `3^(5*4)`:
+
+```sh
+  Linmeric-main> 3^(5*4)
+  => 3486784401
+```
+and we get `3486784401`. Feel free to try every numeric expression you want!
+
+### Getting started with variables:
+Simetimes it is useful to store values on variables, in order to retrive them later in other expressions. Linmeric allows variable storing with a very simple sintax <variable_name> = <expression>.
+We create at first a variable called `x` storing the value `23` as we are going to use it more than once in the next example
+
+```sh
+  Linmeric-main> x = 23
+  => 23
+```
+As we can see linmeric returns `23` that means the operation has successfully execuded.
+Now we can store in another variable, we can call `result`, the result of a longer expression, for instance `x + (x * 9) - x ^ 2` remembering that `x` equals to `23`
+
+```sh
+  Linmeric-main> result = x + (x * 9) - x ^ 2
+  => -299
+```
+And we see `-299` is returned always meaning the operation has successfully execuded.
+
+### Showing variables:
+Now we've seen how to store variables, we see how so display their content.
+Linmeric supports two ways to display variables:
+- through the keyword `shw:` (bug in version 0.2.0)
+- just typing the name of the variable
+
+```sh
+  Linmeric-main> shw: x
+  => 23
+  Linmeric-main> x
+  => 23
+  Linmeric-main> shw: result
+  => -299
+  Linmeric-main> result
+  => -299
+```
+We can notice both these methods achive the same result
 
 ## Displaying the command line guide:
 From the command line type:
