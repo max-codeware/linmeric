@@ -42,7 +42,7 @@ Linmeric can be used as a normal calculator of course, just simply typing the nu
 and we get `3486784401`. Feel free to try every numeric expression you want!
 
 ### Getting started with variables:
-Simetimes it is useful to store values on variables, in order to retrive them later in other expressions. Linmeric allows variable storing with a very simple sintax <variable_name> = <expression>.
+Simetimes it is useful to store values on variables, in order to retrive them later in other expressions. Linmeric allows variable storing with a very simple sintax '<variable_name> = <expression>'.
 We create at first a variable called `x` storing the value `23` as we are going to use it more than once in the next example
 
 ```sh
