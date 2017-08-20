@@ -9,7 +9,7 @@ from the command line type:
 ```sh
   $ sudo gem install linmeric
 ```
-or click here to go to the linmeric rubygems page and download the .gem file. Then open the directory where the .gem file is saved on the commend line and type:
+or click [here](https://rubygems.org/gems/linmeric) to go to the linmeric rubygems page and download the .gem file. Then open the directory where the .gem file is saved on the commend line and type:
 ```sh
   $ sudo gem install ./linmeric-<version>.gem
 ```
