@@ -5,7 +5,7 @@ with matrices and functions (integration)
 
 ## Installation
 
-rom the command line type:
+from the command line type:
 ```sh
   $ sudo gem install linmeric
 ```
