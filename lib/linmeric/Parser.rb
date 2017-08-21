@@ -99,16 +99,16 @@ class Parser
           x = array.pop.to_s + c
           array.push x
         when /\p{Alnum}/ 
-          if expr[@d-1] =~ /[0-9\.x]/ && array.count>0
-            x = array.pop.to_s + c 
+          if expr[@d-1] =~ /[0-9]/ && array.count > 0
+            x = array.pop.to_s + c
             array.push x.to_n
-          elsif (expr[@d-1] =~ /[a-z\A-Z]/ or expr[@d-1] == '_') && array.count>0
+          elsif (expr[@d-1] =~ /[a-z\A-Z]/ or expr[@d-1] == '_')
             x = array.pop.to_s + c 
-            array.push x
+            array.push x 
           else 
-            array.push c.to_n if c =~ /[0-9\.x]/
+            array.push c.to_n if c =~ /[0-9]/
             array.push c if c =~ /[a-zA-Z]/
-          end
+          end          
           @d += 1
         else
           unless @error

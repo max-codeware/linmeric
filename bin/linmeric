@@ -316,7 +316,7 @@ Help.ask if ["-h","--help"].include? ARGV[0]
                              unless @error
                                print "=> " if not a.is_a? Matrix
                                puts "=>" if a.is_a? Matrix
-                               a.show; puts
+                               puts a
                                return nil
                              end
                            else
