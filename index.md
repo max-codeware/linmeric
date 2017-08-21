@@ -77,20 +77,25 @@ Linmeric supports two ways to display variables:
 We can notice both these methods achive the same result
 
 ### Comparing expressions:
-Linmeric automatically compares two expressions if it does not find a variable name on the left side of the equal operator, but an algebric expression. That is: we saw writing `x = 23` produces an assignmet of the value `23` to the variable named `x`. But if we write `x + 1 = 23`, this will produce a comparison returning `true` or `false`.
+Linmeric automatically compares two expressions if it does not find a variable name on the left side of the equal operator, but an algebric expression. That is: we saw writing **x = 23** produces an assignmet of the value **23** to the variable named **x**. But if we write **x + 1 = 23**, this will produce a comparison returning **true** or **false**.
 But let's see on the command line:
 ```sh
   Linmeric-main> x + 1 = 23
   => false
 ```
-This command tells the program to sum 1 to x, that returns 24, and to compare it to 23. Of course 24 does not equal to 23, so `false` is returned.
-Now let's see an example which produces `true` as result:
+This command tells the program to sum **1** to **x**, that returns **24**, and to compare it to **23**. Of course **24** does not equal to **23**, so `false` is returned.
+Now let's see an example which produces **true** as result:
 ```sh
   Linmeric-main> x * 4 + 1 = 31 * 3
   => true
-end
 ```
-`x * 4 + 1` produces `93`, `31 * 3` returns `93` too, so the comparison is true.
+`x * 4 + 1` produces **93**, `31 * 3` returns **93** too, so the comparison is true.
+
+### Declaring a function:
+To integrate a function or to create a function, we need to declare one. To do this we are going to use the keyword **f:** .
+
+### Exiting linmeric:
+To exit the program, just type `exit`
 
 ## Displaying the command line guide:
 From the command line type:
