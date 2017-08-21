@@ -77,22 +77,40 @@ Linmeric supports two ways to display variables:
 We can notice both these methods achive the same result
 
 ### Comparing expressions:
-Linmeric automatically compares two expressions if it does not find a variable name on the left side of the equal operator, but an algebric expression. That is: we saw writing **x = 23** produces an assignmet of the value **23** to the variable named **x**. But if we write **x + 1 = 23**, this will produce a comparison returning **true** or **false**.
+Linmeric automatically compares two expressions if it does not find a variable name on the left side of the equal operator, but an algebric expression. That is: we saw writing `x = 23` produces an assignmet of the value `23` to the variable named `x`. But if we write `x + 1 = 23`, this will produce a comparison returning `true` or `false`.
 But let's see on the command line:
 ```sh
   Linmeric-main> x + 1 = 23
   => false
 ```
-This command tells the program to sum **1** to **x**, that returns **24**, and to compare it to **23**. Of course **24** does not equal to **23**, so `false` is returned.
-Now let's see an example which produces **true** as result:
+This command tells the program to sum `1` to `x`, that returns `24`, and to compare it to `23`. Of course `24` does not equal to `23`, so `false` is returned.
+Now let's see an example which produces *`true` as result:
 ```sh
   Linmeric-main> x * 4 + 1 = 31 * 3
   => true
 ```
-`x * 4 + 1` produces **93**, `31 * 3` returns **93** too, so the comparison is true.
+`x * 4 + 1` produces `93`, `31 * 3` returns 93 too, so the comparison is true.
 
 ### Declaring a function:
-To integrate a function or to create a function, we need to declare one. To do this we are going to use the keyword **f:** .
+To integrate a function or to create a function, we need to declare one. To do this we are going to use the keyword `f:` .
+For instance we can declare a function as `x * log(x)` and storing it in a variable named `fx`:
+```sh
+  Linmeric-main> fx = f: "x * log(x)"
+  => x*log(x) 
+```
+As we saw previously, the function itself is returned to tell the declaration has been successfully executed.
+We can also observe, the keyword `f:` takes its argument between quotes: this allows the program to recognize the argument as a special one, and not as an ordinary expression.
+
+The supported math functions are:
+- log
+- sin
+- cos
+- exp
+- tan 
+and the constant **PI**
+
+*note*: To evaluate a function, linmeric uses Ruby methods; so dividing a value may produce unexpected values. For example:
+`y/3` would return **0** (supposing `y` is given the value of 4), as `y` is divided by an integer number. But if we write `y/3.0`, it returns **1.3333333**, since `y` is now divided by a float number.
 
 ### Exiting linmeric:
 To exit the program, just type `exit`
