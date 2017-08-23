@@ -1,7 +1,6 @@
----
-visible: 1
-header1: Welcome to linmeric user guide
-header3: This page will provide a simple guide to learn how to use this simple command line calculator
+{:no_toc}
+# Welcome to linmeric user guide
+### This page will provide a simple guide to learn how to use this simple command line calculator
 ---
 
 * table of content
