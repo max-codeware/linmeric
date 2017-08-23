@@ -1,7 +1,8 @@
 {:.no_toc}
 # Welcome to linmeric user guide
+{:.no_toc}
 ### This page will provide a simple guide to learn how to use this simple command line calculator
-
+___
 
 * table of content
 {:toc}
