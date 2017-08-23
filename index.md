@@ -3,10 +3,10 @@
 ### This page will provide a simple guide to learn how to use this simple command line calculator
 {:.no_toc}
 ___
-```
+
 * table of content
 {:toc}
-```
+
 ## Installing linmeric:
 
 From the command line type:
