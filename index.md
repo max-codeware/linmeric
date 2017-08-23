@@ -7,6 +7,8 @@ ___
 {:.no_toc}
 * table of content
 {:toc}
+___
+
 
 ## Installing linmeric:
 
