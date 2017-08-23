@@ -1,6 +1,8 @@
 # Welcome to linmeric user guide
 ### This page will provide a simple guide to learn how to use this simple command line calculator
 
+- table_of_content{:toc}
+
 ## Installing linmeric:
 
 From the command line type:
@@ -108,6 +110,8 @@ The supported math functions are:
 - exp
 - tan 
 and the constant **PI**
+
+*restriction*: Variables can be composed by an only letter (a, x, y...), otherwise an error would be raised (Bad function error)
 
 *note*: To evaluate a function, linmeric uses Ruby methods; so dividing a value may produce unexpected values. For example:
 `y/3` would return **0** (supposing `y` is given the value of 4), as `y` is divided by an integer number. But if we write `y/3.0`, it returns **1.3333333**, since `y` is now divided by a float number.
