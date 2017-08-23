@@ -3,8 +3,8 @@
 ### This page will provide a simple guide to learn how to use this simple command line calculator
 {:.no_toc}
 ___
-{:.no_toc}
 ## Index
+{:.no_toc}
 * table of content
 {:toc}
 
