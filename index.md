@@ -116,6 +116,7 @@ The supported math functions are:
 - cos
 - exp
 - tan 
+
 and the constant **PI**
 
 *restriction*: Variables can be composed by an only letter (a, x, y...), otherwise an error would be raised (Bad function error)
