@@ -3,7 +3,7 @@
 ### This page will provide a simple guide to learn how to use this simple command line calculator
 {:.no_toc}
 ___
-## Index
+## Index:
 {:.no_toc}
 * table of content
 {:toc}
@@ -123,17 +123,113 @@ and the constant **PI**
 *note*: To evaluate a function, linmeric uses Ruby methods; so dividing a value may produce unexpected values. For example:
 `y/3` would return **0** (supposing `y` is given the value of 4), as `y` is divided by an integer number. But if we write `y/3.0`, it returns **1.3333333**, since `y` is now divided by a float number.
 
+### Creating a matrix:
+Four methods are provided by this language to create a function:
+- Inserting the values by hand
+- According a certain function
+- Loading a matrix from a .csv file
+- Identity matrix
+
+The first three methods use the keyword `mx:`. Let's see them in detail:
+
+#### Values inserted by hand:
+We could create a 4x5 matrix just to begin, inserting the values we want and saving it in a variable called `m1`. 
+
+```sh
+  Linmeric-main> m1 = mx: "4,5"
+  Insert the line values (separated by space) and press return to go on
+  2 4 6 8 10
+  3 6 9 12 15
+  0 25 2 3 8
+  1 2 2 3 3 
+  =>
+  |   2.0   4.0   6.0   8.0  10.0  |
+  |   3.0   6.0   9.0  12.0  15.0  |
+  |   0.0  25.0   2.0   3.0   8.0  |
+  |   1.0   2.0   2.0   3.0   3.0  |
+```
+Even here we can notice `mx:` takes arguments between quotes. Linmeric uses quotes whenever it needs to identify special inputs.
+The matrix dimension is described by the row number and column number separated by a comma. 
+
+The successfully built matrix is returned as usual.
+
+As value, a more complex expression can be given, like `1/5` or `3^(-8)`, but they must not contain spaces.
+
+#### According a certain function:
+Here a new keyword is needed, that is `as:`. The general sintax to build a matrix according a function is:
+
+   **mx: "*rows*,*columns*" as: "function"**
+This is useful if we want to create automatically a matrix.
+
+We can build a 3x7 matrix, save it in m2, and the components must be given by the product between the line number and the column number:
+```sh
+  Linmeric-main> m2 = mx: "3,7" as: "r*c"
+  =>
+  |   0.0   0.0   0.0   0.0   0.0   0.0   0.0  |
+  |   0.0   1.0   2.0   3.0   4.0   5.0   6.0  |
+  |   0.0   2.0   4.0   6.0   8.0  10.0  12.0  |
+```
+Or we could create a matrix in which each component is the number **8**, just typing:
+```sh
+  Linmeric-main> m3 = mx: "3,7" as: "8"
+  =>
+  |  8.0  8.0  8.0  8.0  8.0  8.0  8.0  |
+  |  8.0  8.0  8.0  8.0  8.0  8.0  8.0  |
+  |  8.0  8.0  8.0  8.0  8.0  8.0  8.0  |
+```
+We can even save the function in a variable and give it as argumet, and we would get the same result as well
+```sh
+  Linmeric-main> gx = f: "8"
+  => 8
+  Linmeric-main> mx: "3,7" as: gx
+  =>
+  |  8.0  8.0  8.0  8.0  8.0  8.0  8.0  |
+  |  8.0  8.0  8.0  8.0  8.0  8.0  8.0  |
+  |  8.0  8.0  8.0  8.0  8.0  8.0  8.0  |
+```
+If we wrote a function with variables, the first one would represent the row number, while the second one the column number (if we decided to use a second variable).
+
+#### From a .csv file
+Here the sintax is very similar to the previous one, but we don't need to specify any dimension, as it will be determined automatically:
+
+   **mx: from: "/path/to/the/file.csv"**
+Let's suppose we saved our file in `/home/usr/Desktop` and to have named it as `matrix.csv` with this structure:
+```
+  2,4,6,8,10
+  3,6,9,12,15
+  0,25,2,3,8
+  1,2,2,3,3 
+```
+And from linmeric we write:
+```sh
+  Linmeric-main> m4 = mx: from: "/home/usr/Desktop/matrix.csv"
+  =>
+  |   2.0   4.0   6.0   8.0  10.0  |
+  |   3.0   6.0   9.0  12.0  15.0  |
+  |   0.0  25.0   2.0   3.0   8.0  |
+  |   1.0   2.0   2.0   3.0   3.0  |
+```
+And voilà: we loaded our matrix!
+
+#### Identity matrix
+This matrix uses a special keyword `id_mx:` which takes an only argument: the number of rows and columns (note that rows = columns).
+```sh
+  Linmeric-main> id = id_mx: 4
+  =>
+  |  1.0  0.0  0.0  0.0  |
+  |  0.0  1.0  0.0  0.0  |
+  |  0.0  0.0  1.0  0.0  |
+  |  0.0  0.0  0.0  1.0  |
+```
+Note that here quotes are unecessary for the size, as the argument is just a number (and not a dimension).
+
 ### Exiting linmeric:
 To exit the program, just type `exit`
 
 ## Displaying the command line guide:
 From the command line type:
 ```sh
-  $ linmeric -h
-```
-or
-```sh
-  $ linmeric --help
+  $ linmeric -h/--help
 ```
 and a quick help menu will be runned. Choose the option you're most interested in!
 
