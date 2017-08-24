@@ -159,6 +159,7 @@ As value, a more complex expression can be given, like `1/5` or `3^(-8)`, but th
 Here a new keyword is needed, that is `as:`. The general sintax to build a matrix according a function is:
 
    **mx: "*rows*,*columns*" as: "function"**
+   
 This is useful if we want to create automatically a matrix.
 
 We can build a 3x7 matrix, save it in m2, and the components must be given by the product between the line number and the column number:
@@ -193,6 +194,7 @@ If we wrote a function with variables, the first one would represent the row num
 Here the sintax is very similar to the previous one, but we don't need to specify any dimension, as it will be determined automatically:
 
    **mx: from: "/path/to/the/file.csv"**
+   
 Let's suppose we saved our file in `/home/usr/Desktop` and to have named it as `matrix.csv` with this structure:
 ```
   2,4,6,8,10
