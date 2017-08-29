@@ -281,10 +281,9 @@ Of course we can put an expression that will produce a new matrix, such as `t: m
 #### Norm:
 The norm of a matrix in linmeric is defined as the squared root of the sum of each squared element, that is:
 
-$norm & = & \sqrt{2}$
 $$
 \begin{equation}
-\sqrt{2}
+norm & = & 
 \end{equation}
 $$
 
