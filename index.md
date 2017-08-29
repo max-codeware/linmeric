@@ -172,7 +172,7 @@ The successfully built matrix is returned as usual.
 
 As value, a more complex expression can be given, like `1/5` or `3^(-8)`, but they must not contain spaces.
 
-#### According a certain function:
+#### According to a function:
 Here a new keyword is needed, that is `as:`. The general sintax to build a matrix according a function is:
 
    **mx: "*rows*,*columns*" as: "function"**
