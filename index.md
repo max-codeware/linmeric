@@ -280,9 +280,9 @@ Of course we can put an expression that will produce a new matrix, such as `t: m
 
 #### Norm:
 The norm of a matrix in linmeric is defined as the squared root of the sum of each squared element, that is:
-```math
-  \sqrt{\sum a_i,j}
-```
+
+$sqrt{\sum a_i,j}$
+
 The commend we need to give is `norm:` followed by a matrix name (or a matrix declaration if we want) an the sintax is the same like the command `t:`. Let's test the `norm:` operator on `m1` (we used previously):
 ```sh
   Linmeric-main> norm: m1
