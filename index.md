@@ -279,11 +279,11 @@ And we get our transposed matrix.
 Of course we can put an expression that will produce a new matrix, such as `t: m1*3` or `t: (m1 + m1)` as the expression will be evalued first, and than `t:` will do its job.
 
 #### Norm:
-The norm of a matrix in linmeric is defined as the squared root of the sum of each squared element, that is:.
+The norm of a matrix in linmeric is defined as the squared root of the sum of each squared element, that is:
 
+$norm & = & \sqrt{2}$
 $$
 \begin{equation}
-3
 \sqrt{2}
 \end{equation}
 $$
