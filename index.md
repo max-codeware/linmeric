@@ -257,7 +257,7 @@ Linmeric automatically trasposes a matrix in the first three operations, to perf
 But there are three more characteristic operations on matrices:
 - Transposition
 - Norm
-- Determinent
+- Determinant
 
 Let's see them one for time:
 
