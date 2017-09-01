@@ -233,6 +233,9 @@ class Sizer
                 end
               end
               state = 2
+            else
+              PrintError.missmatch(token[@i],@@string,"keyword 'from:' or block")
+              return false
           end
           
         # checking integ arguments (full check)

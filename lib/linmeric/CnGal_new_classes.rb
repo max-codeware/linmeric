@@ -2,6 +2,7 @@
 
 require_relative 'Function_class.rb'
 
+
 ##
 # Overload of Numeric class
 #
@@ -37,12 +38,13 @@ class Numeric
 end
 
 ##
-# Overload of Fixnum class
+# Definition of some method for Int numbers. This is included in Integer class (ruby_version >= 2.2)
+# or Fixnum class (ruby_version <= 2.2) 
 #
 #
 # Author:: Massimiliano Dal Mas (mailto:max.codeware@gmail.com)
 # License:: Distributed under MIT license
-class Fixnum 
+module IntNum
 
   # Compares the value with another object
   #
@@ -70,6 +72,16 @@ class Fixnum
   
 end
 
+# Little patch for ruby versions
+if RUBY_VERSION >= "2.2.0"
+  class Integer
+    include IntNum
+  end
+else
+  class Fixnum
+    include  IntNum
+  end
+end
 
 ##
 # Overload of Float class

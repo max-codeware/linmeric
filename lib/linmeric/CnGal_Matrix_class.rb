@@ -8,6 +8,12 @@ require_relative 'Calculator.rb'
 class InputError < ArgumentError; end
 class MyArgError < RuntimeError; end
 
+# Little patch for ruby_version
+if RUBY_VERSION >= "2.2.0" then
+  Int = Integer
+else
+  Int = Fixnum
+end
 ##
 # This class provides a simple representation of a matrix with the main
 # features, operations and some useful method to manipulate it or to make 
@@ -30,9 +36,9 @@ class Matrix
     listener = Listener.new
     if rws == 0 or cls == 0 or rws.is_a? Float or cls.is_a? Float then 
       raise MyArgError,"   Argument Error: invalid dimension #{rws}x#{cls} for Matrix object" 
-    elsif !(rws.is_a? Fixnum) or !(cls.is_a? Fixnum) then
-          e = rws unless e.is_a? Fixnum
-          e = cls unless cls.is_a? Fixnum
+    elsif !(rws.is_a? Int) or !(cls.is_a? Int) then
+          e = rws unless e.is_a? Int
+          e = cls unless cls.is_a? Int
           raise MyArgError,"  Argument Error: colums and rows in Integer format expected but #{e.class} found"
     else
       @MyRws = rws; @MyCls = cls
@@ -396,7 +402,7 @@ class Matrix
   # * **argument**: `Fixnum` of the matrix dimension
   # * **returns**: `Matrix` object
   def Matrix.identity(n)
-    raise MyArgError, "Argument Error: expecting Fixnum value, but #{n.class} found" unless n.is_a? Fixnum
+    raise MyArgError, "Argument Error: expecting Fixnum value, but #{n.class} found" unless n.is_a? Int
     return Matrix.new(n,n) { |i,j|  (i == j) ? 1 : 0 }
   end
   
@@ -414,7 +420,7 @@ class Matrix
    # * **returns**: `Matrix` object 
    def del_rwcl(mx,rw,cl)
      [rw,cl].each do |arg| 
-       raise MyArgError,"Argument Error: row and column in Fixnum format expected, but #{arg.class} found" unless arg.is_a? Fixnum
+       raise MyArgError,"Argument Error: row and column in Fixnum format expected, but #{arg.class} found" unless arg.is_a? Int
      end
      rd = mx.export.clone
      cols = mx.getCls

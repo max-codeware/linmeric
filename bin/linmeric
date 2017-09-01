@@ -316,7 +316,7 @@ Help.ask if ["-h","--help"].include? ARGV[0]
                              unless @error
                                print "=> " if not a.is_a? Matrix
                                puts "=>" if a.is_a? Matrix
-                               a.show; puts
+                               puts a
                                return nil
                              end
                            else
@@ -473,8 +473,8 @@ scp    = Scp.new
 parser = Parser.new
 reader = Listener.new
 sizer = Sizer.new
-print "Linmeric-main> "
 begin
+  print "Linmeric-main> "
   string = reader.gets
   while string != "exit"
     if sizer.analyze(string)
@@ -496,7 +496,6 @@ begin
     @error = false
     parser.reset
     print "Linmeric-main> "
-#    reader.reset
     string = reader.gets
   end
 
