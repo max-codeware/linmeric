@@ -102,7 +102,11 @@ class Parser
           if expr[@d-1] =~ /[0-9]/ && array.count > 0
             x = array.pop.to_s + c
             array.push x.to_n
+<<<<<<< HEAD
           elsif (expr[@d-1] =~ /[a-z\A-Z]/ or expr[@d-1] == '_') && array.count > 0
+=======
+          elsif (expr[@d-1] =~ /[a-z\A-Z]/ or expr[@d-1] == '_')
+>>>>>>> f471ac99deaec12aa64ccba1ad4700abd3934558
             x = array.pop.to_s + c 
             array.push x 
           else 
