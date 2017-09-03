@@ -317,15 +317,15 @@ ___
 ### Integrating a function:
 Now let's see how to integrate a funtion on a given range. The command we are going to use is `integ:` with the following sintax:
 
-**integ: "*function*" "*a,b*" <number_of_points> ["<integration_method>"]**
+**integ: "*function*" "*a,b*" *number_of_points* ["*integration_method*"]**
 
 ***function*** is the function we want to integrate. It can be given even through a variable.
 
 **a** is the left value of the range, while **b** is the right one. Of cours we must have a < b.
 
-**<number_of_points>** is the number of ranges we want our function range to be divided for the integration.
+***number_of_points** is the number of ranges we want our function range to be divided for the integration.
 
-**<integration_method>** is an optional argument to specify the integration method which can be coosen from:
+***integration_method** is an optional argument to specify the integration method which can be coosen from:
 - trapezes
 - rectl (left rectangles)
 - rectr (right rectangles)
