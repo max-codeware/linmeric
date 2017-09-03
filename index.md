@@ -355,6 +355,8 @@ As it's possible to see, both the ways achive the same result. But what happens 
 ```
 And the result does not change. So why different methods for integration? Essentially each method has a different approximation, so results may differ for some decimal.
 
+___
+
 ### Exiting linmeric:
 To exit the program, just type `exit`
 
