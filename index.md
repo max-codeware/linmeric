@@ -314,6 +314,47 @@ Linmeric uses Laplace's algorithm, and even if it has been optimized a little bi
 
 ___
 
+### Integrating a function:
+Now let's see how to integrate a funtion on a given range. The command we are going to use is `integ:` with the following sintax:
+
+**integ: "*function*" "*a,b*" <number_of_points> ["<integration_method>"]**
+
+***function*** is the function we want to integrate. It can be given even through a variable.
+
+**a** is the left value of the range, while **b** is the right one. Of cours we must have a < b.
+
+**<number_of_points>** is the number of ranges we want our function range to be divided for the integration.
+
+**<integration_method>** is an optional argument to specify the integration method which can be coosen from:
+- trapezes
+- rectl (left rectangles)
+- rectr (right rectangles)
+- midpoint (middle rectangles)
+- simpson
+- boole
+
+If the method is not specified, simpson is set as default.
+
+Moreover even here we can notice the function (unless it is given trough a variable), the range and the integration method are taken between quotes, for the reasons we saw previously.
+
+Now let's see an example: we can use the function we declared in the section **Declaring a fuction**, that is `x * log(x)`, saved in the variable we called `fx`. We can try both declaring the function directly and using the variable containing our function.
+
+Let's suppose to integrate `fx` from **1** to **5**, on **50** points and for the moment not to specify the method.
+```sh
+  Linmeric-main> fx
+  => x * log(x)
+  Linmeric-main> integ: "x * log(x)" "1,5" 50
+  => 14.117973919063417
+  Linmeric-main> integ: fx "1,5" 50
+  => 14.117973919063417
+```
+As it's possible to see, both the ways achive the same result. But what happens if the method is specified? Let's try out the midpoint method:
+```sh
+  Linmeric-main> integ: fx "1,5" 50 "midpoint"
+  => 14.117973919063417
+```
+And the result does not change. So why different methods for integration? Essentially each method has a different approximation, so results may differ for some decimal.
+
 ### Exiting linmeric:
 To exit the program, just type `exit`
 
