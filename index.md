@@ -357,6 +357,83 @@ And the result does not change. So why different methods for integration? Essent
 
 ___
 
+### LU factorization
+Linmeric also provides a method to solve linear systems, using the LU factorization. Let's take as example the following system:
+```math
+  | 1 5  3 || x |   | -6  |
+  | 0 4  2 || y | = | -10 |
+  | 1 1 -1 || z |   |  6  |
+```
+Which is the same of writing:
+```
+   /
+  |  x + 5y + 3z = -6
+ <   4y + 2z     = -10
+  |  x + y - z   = 6
+   \
+```
+Now: of course it is possible to solve it by hand (espacially because it is simple), but it would be much quick to ask a computer to do it for you.
+
+So what do we have to tell linmeric to do? The sintax is:
+
+**solve: *system_matrix* ~ *known_value_vector***
+
+***system_matrix*** is the first matrix in the first box of this section, while ***known_value_vector*** is the last vector of the same box.
+
+So from linmeric, we firts create our matrix, and save it in `A`, and then we declare our known value vector saving it in `b`(the system can be written like `Ax = b`)
+```sh
+  Linmeric-main> A = mx: "3,3"
+  Insert the line values (separated by space) and press return to go on
+  1 5 3
+  0 4 2
+  1 1 -1
+  =>
+  |   1.0   5.0   3.0  |
+  |   0.0   4.0   2.0  |
+  |   1.0   1.0  -1.0  |
+  Linmeric-main> b = mx: "3,1"
+  Insert the line values (separated by space) and press return to go on
+  -6
+  -10
+  -6
+  =>
+  |   -6.0  |
+  |  -10.0  |
+  |    6.0  |
+```
+And now let's solve the system
+```sh
+  Linmeric-main> solve: A ~ b
+  =>
+  |   7.0  |
+  |  -2.0  |
+  |  -1.0  |
+```
+So here we have our solution. But we must be a little bit careful, as we used a LU factoruzation with pivoting, so the rows of our original matrix and vector may have been swapped, so the first value we see (that is `7`) is not necessary our `x`.
+So we can rebuild the matrix 'A' multiplying `L` and `U` matrices which are automatically saved with those names, and see what changed
+```sh
+  Linmeric-main> L*U
+  =>
+  |   1.0   5.0   3.0  |
+  |   0.0   4.0   2.0  |
+  |   1.0   1.0  -1.0  |
+```
+It is clear that no rows have been swapped, and this means our solutions are just:
+```math
+   /
+  |  x = 7
+  <  y = -2
+  |  z = -1
+   \
+```
+and there are no particular changes to make. But if we had the first two rows swapped, for instance, the values of `x` and `y` would have been **-2** and **7**.
+
+If another `solve:` method is called, the previous L and U matrices will be overwritten, so if it is in the plan to reuse them, it's better to save them in other variables.
+
+`A` matrix and `b` vector can be directly written in the method, but ensuring a couple of parentheses for each declaration like in this way: `solve: (mx: "3,3") ~ (mx: "3,1")`, then we will be asked to insert the values of `A` and then again, the values of `b`
+
+___
+
 ### Exiting linmeric:
 To exit the program, just type `exit`
 
