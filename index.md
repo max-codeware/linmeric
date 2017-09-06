@@ -335,7 +335,7 @@ Now let's see how to integrate a funtion on a given range. The command we are go
 
 If the method is not specified, simpson is set as default.
 
-Moreover even here we can notice the function (unless it is given trough a variable), the range and the integration method are taken between quotes, for the reasons we saw previously.
+Moreover even here we can notice the function (unless it is given trough a variable), the range and the integration method are taken between quotes, for the reasons we previously saw.
 
 Now let's see an example: we can use the function we declared in the section **Declaring a fuction**, that is `x * log(x)`, saved in the variable we called `fx`. We can try both declaring the function directly and using the variable containing our function.
 
@@ -434,6 +434,30 @@ If another `solve:` method is called, the previous L and U matrices will be over
 
 ___
 
+### Writing datas on files:
+This option is thought to write matrices on files, but it perfectly works with every kind of data a user can produce with linmeric, functions included.
+
+In this case we have no keywords, but only a writer operator `>`, and the sintax is extremely easy, and very similar to the bash one:
+
+***data_to_write* > "/path/to/the/file"**
+
+- ***data_to_write*** can be an expression, a function, a matrix or other, but what will be written is the final result.
+- **/path/to/the/file** is the path where our file is located or will be located. This argument is taken between quotes and if the file does not exist, it will be automatically created.
+
+As said previously, this command is very usefull to write matrices, especially if they are too big to be printed out on the command line, or if they are needed in future, remembering a matrix can be loaded from a .csv file (see **Creating a matrix:**#From a .csv file).
+
+Matrices are written in csv format, while all the other kind of datas do not have any format, but are just written like ordinary strings.
+Moreover, this command does not allow to add content to a file, so if we give the command the path to a file we previously wrote, it will be totally overwritten.
+
+Now it's time to see it working. We can try to write the matrix `A` in the previous section on a file located in `/home/usr/Desktop` we can simply call `Matrix_A.csv`
+```sh
+  Linmeric-main> A > "home/usr/Desktop/Matrix_A.csv"
+  => nil
+```
+No particuler messages are returned, but since no errors have been raised, it means everything went well. Just check the file!
+
+___
+
 ### Exiting linmeric:
 To exit the program, just type `exit`
 
@@ -466,5 +490,3 @@ ___
 Bug and mistake reports and pull requests are absolutely welcomed!
 To report any bug in the code or a mistake in the provided guides or in this website, please email me at max.codeware@gmail.com or on [GitHub](https://github.com/max-codeware/linmeric) to pull requests too.
 
-
-*note*: Further instructions will be added as soon as possible
