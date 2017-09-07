@@ -1,7 +1,7 @@
 # Linmeric
 
 This simple numeric calulator provides an easy command line user interface to make operations
-with matrices and functions (integration)
+with matrices and functions (integration).
 
 ## Installation
 
@@ -16,7 +16,7 @@ or click [here](https://rubygems.org/gems/linmeric) to go to the linmeric rubyge
 `<version>` must be replaced by the version number of the gem you downloaded
 
 ## Usage
-Instructions are available on the [linmeric page](https://max-codeware.github.io/linmeric/) or you can use the following commands
+A whole tutorial is available on the [linmeric page](https://max-codeware.github.io/linmeric/) otherwise you can use the following commands
 to display the guides:
 
 ### Displaying the command line guide:
@@ -29,7 +29,7 @@ or
 ```sh
   $ linmeric --help
 ```
-and a quick help menu will be runned. Choose the option you’re most interested in!
+and a quick help menu will run. Choose the option you’re most interested in!
 
 ### Viewing the linmeric guide on gedit:
 From the command line type:
