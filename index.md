@@ -34,6 +34,10 @@ ___
 - Help menu and guides have been added
 - Some bugs have been fixed
 
+### 0.2.1
+- Bug fixing
+- Now it's possible to view the version with the command `linmeric -v`
+
 ___
 
 ## Running linmeric:
